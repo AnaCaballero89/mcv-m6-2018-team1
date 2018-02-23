@@ -1,11 +1,11 @@
-# mcv-m6-2018-team1
+# M6 Project - Video Surveillance for Road Traffic Monitoring
 
-Team 1:
+## Team 1:
 
-  Lorenzo Betto
+    Lorenzo Betto
   
-  Yevgeniy Kadranov
+    Yevgeniy Kadranov
   
-  Raül Düaigües
+    Raül Düaigües
   
-  Santiago Barbarisi
+    Santiago Barbarisi
