@@ -1,8 +1,14 @@
 ## M6 Project - Video Surveillance for Road Traffic Monitoring
 
-#### Team 1:
+The goal of the project is to learn the basic concepts and techniques related to video sequences mainly for surveillance applications.
+
+
+#### Team 1 - Members:
+
+Santiago Barbarisi
 
 Lorenzo Betto
-Yevgeniy Kadranov
+
 Raül Düaigües
-Santiago Barbarisi
+
+Yevgeniy Kadranov
