@@ -1,2 +1,7 @@
-# mcv-m4-2018-team1
-Team 1
+# mcv-m6-2018-team1
+
+Team 1:
+  Lorenzo Betto
+  Yevgeniy Kadranov
+  Raül Düaigües
+  Santiago Barbarisi
