@@ -10,7 +10,7 @@ The goal of the project is to learn the basic concepts and techniques related to
 
 <li>Lorenzo Betto</li>
 
-<li>Raül Düaigües</li>
+<li>Raül Duaigües</li>
 
 <li>Yevgeniy Kadranov</li>
 </ul>
