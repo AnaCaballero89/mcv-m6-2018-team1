@@ -26,10 +26,11 @@ The goal of the project is to learn the basic concepts and techniques related to
     - Recall
     - F1 Score
     
-- [X] Explain the numerical results obtained and provide an interpretation of the different values
+- [ ] Explain the numerical results obtained and provide an interpretation of the different values
 
+        asdfghjklñjhgfdsadfghj
 
-### Task 2: Segmentation metrics. Temporal analysis
+### Task 2: Segmsentation metrics. Temporal analysis
 
 
 ### Task 3: Optical flow evaluation metrics
