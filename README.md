@@ -26,8 +26,6 @@ The goal of the project is to learn the basic concepts and techniques related to
     
 - [ ] Explain the numerical results obtained and provide an interpretation of the different values
 
-        asdfghjklñjhgfdsadfghj
-
 ### Task 2: Segmentation metrics. Temporal analysis
 - [X] Temporal analysis of the results. Create 2 graphs:
 
@@ -43,8 +41,6 @@ The goal of the project is to learn the basic concepts and techniques related to
 </p> -->
 
 - [ ] Explain and show why
-
-        asdfghjklñjhgfdsadfghj
         
 ### Task 3: Optical flow evaluation metrics
 - [X] Optical flow estimations using the Lucas-Kanade algorithm (Sequences 45 and 157)
@@ -53,63 +49,22 @@ The goal of the project is to learn the basic concepts and techniques related to
     
 - [ ] Discuss the obtained results and generate visualizations that help understanding them
 
-        asdfghjklkjhgfdsas
-
 ### Task 4: De-synchornized results
 
 - [X] Forward de-synchronized results for background substraction (Highway sequence)
 
-<p align="center">
+<!-- <p align="center">
 <img src="https://github.com/mcv-m6-video/mcv-m6-2018-team1/blob/master/week1/Des_TestA.png" width="500"/>
-</p>
+</p> -->
 
-<p align="center">
+<!-- <p align="center">
 <img src="https://github.com/mcv-m6-video/mcv-m6-2018-team1/blob/master/week1/Des_TestB.png" width="500"/>
-</p>
+</p> -->
 
 ### Task 5: Visual representation optical flow
 
 - [X] Plot the optical flow
 - [ ] Propose a simplification method for a clean visualization
 
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-**Badges will go here**
-
-- build status
-- issues (waffle.io maybe)
-- devDependencies
-- npm package
-- coverage
-- slack
-- downloads
-- gitter chat
-- license
-- etc.
 
 
