@@ -74,15 +74,23 @@ groundTruthPath = '../highway/groundtruth/'
 AImgs, BImgs = readTest(abSequencePath)
 groundTruthImgs = readGT(groundTruthPath)
 
-TestAmetric=[]
-TestBmetric=[]
+TestAmetric = []
+TestBmetric = []
+TestATP = []
+TestBTP = []
+TestAFN = []
+TestBFN = []
 for idx, img in enumerate(groundTruthImgs):
     pred_labels = AImgs[idx,:,:]
     true_labels=groundTruthImgs[idx,:,:]
     TP, TN, FP, FN = evaluation(pred_labels,true_labels)
+    TestATP.append(TP)
+    TestAFN.append(FN)
     TestAmetric.append(metrics(TP, TN, FP, FN))
     pred_labels = BImgs[idx,:,:]
     TP, TN, FP, FN = evaluation(pred_labels,true_labels)
+    TestBTP.append(TP)
+    TestBFN.append(FN)
     TestBmetric.append(metrics(TP, TN, FP, FN))
 
 
