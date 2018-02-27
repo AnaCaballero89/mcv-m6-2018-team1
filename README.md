@@ -13,8 +13,6 @@ The goal of the project is to learn the basic concepts and techniques related to
 
 ## Week 1
 
-
-
 ### Task 1: Segmentation metrics. Understand precision & recall
 
 - [X] Given the sequences TEST A and TEST B using different background substraction methods, implement and compute the evaluation measures 
@@ -30,9 +28,24 @@ The goal of the project is to learn the basic concepts and techniques related to
 
         asdfghjklñjhgfdsadfghj
 
-### Task 2: Segmsentation metrics. Temporal analysis
+### Task 2: Segmentation metrics. Temporal analysis
+- [X] Temporal analysis of the results. Create 2 graphs:
 
+    - True Positive & Total Foreground pixels vs frame 
+    - F1 Score vs frame
+    
+<p align="center">
+<img src="https://github.com/mcv-m6-video/mcv-m6-2018-team1/blob/master/week1/TotalFG.png" width="500"/>
+</p>
 
+<p align="center">
+<img src="https://github.com/mcv-m6-video/mcv-m6-2018-team1/blob/master/week1/F1_2.png" width="500"/>
+</p>
+
+- [ ] Explain and show why
+
+        asdfghjklñjhgfdsadfghj
+        
 ### Task 3: Optical flow evaluation metrics
 
 
