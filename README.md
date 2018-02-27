@@ -34,26 +34,43 @@ The goal of the project is to learn the basic concepts and techniques related to
     - True Positive & Total Foreground pixels vs frame 
     - F1 Score vs frame
     
-<p align="center">
+<!-- <p align="center">
 <img src="https://github.com/mcv-m6-video/mcv-m6-2018-team1/blob/master/week1/TotalFG.png" width="500"/>
-</p>
+</p> -->
 
-<p align="center">
+<!--  <p align="center">
 <img src="https://github.com/mcv-m6-video/mcv-m6-2018-team1/blob/master/week1/F1_2.png" width="500"/>
-</p>
+</p> -->
 
 - [ ] Explain and show why
 
         asdfghjklñjhgfdsadfghj
         
 ### Task 3: Optical flow evaluation metrics
+- [X] Optical flow estimations using the Lucas-Kanade algorithm (Sequences 45 and 157)
+    - Metric: Mean Square Error in Non-occluded areas
+    - Metric: Percentage of Erroneous Pixels in Non-occluded areas
+    
+- [ ] Discuss the obtained results and generate visualizations that help understanding them
 
+        asdfghjklkjhgfdsas
 
 ### Task 4: De-synchornized results
 
+- [X] Forward de-synchronized results for background substraction (Highway sequence)
+
+<p align="center">
+<img src="https://github.com/mcv-m6-video/mcv-m6-2018-team1/blob/master/week1/Des_TestA.png" width="500"/>
+</p>
+
+<p align="center">
+<img src="https://github.com/mcv-m6-video/mcv-m6-2018-team1/blob/master/week1/Des_TestB.png" width="500"/>
+</p>
 
 ### Task 5: Visual representation optical flow
 
+- [X] Plot the optical flow
+- [ ] Propose a simplification method for a clean visualization
 
 
 What things you need to install the software and how to install them
@@ -95,14 +112,4 @@ End with an example of getting some data out of the system or using it for a lit
 - license
 - etc.
 
-#### Team 1 - Members:
 
-<ul>
-<li>Santiago Barbarisi</li>
-
-<li>Lorenzo Betto</li>
-
-<li>Raül Duaigües</li>
-
-<li>Yevgeniy Kadranov</li>
-</ul>
