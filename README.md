@@ -11,7 +11,7 @@ The goal of the project is to learn the basic concepts and techniques related to
 | Raül Duaigües |[raulduaigues](https://github.com/raulduaigues)|
 | Yevgeniy Kadranov|[YevKad](https://github.com/YevKad)|
 
-## Week 1
+## Week 1: Introduction, DB and Evaluation metrics
 
 ### Task 1: Segmentation metrics. Understand precision & recall
 
@@ -24,7 +24,7 @@ The goal of the project is to learn the basic concepts and techniques related to
     - Recall
     - F1 Score
     
-- [ ] Explain the numerical results obtained and provide an interpretation of the different values
+- [X] Explain the numerical results obtained and provide an interpretation of the different values
 
 ### Task 2: Segmentation metrics. Temporal analysis
 - [X] Temporal analysis of the results. Create 2 graphs:
@@ -40,14 +40,14 @@ The goal of the project is to learn the basic concepts and techniques related to
 <img src="https://github.com/mcv-m6-video/mcv-m6-2018-team1/blob/master/week1/F1_2.png" width="500"/>
 </p> -->
 
-- [ ] Explain and show why
+- [X] Explain and show why
         
 ### Task 3: Optical flow evaluation metrics
 - [X] Optical flow estimations using the Lucas-Kanade algorithm (Sequences 45 and 157)
     - Metric: Mean Square Error in Non-occluded areas
     - Metric: Percentage of Erroneous Pixels in Non-occluded areas
     
-- [ ] Discuss the obtained results and generate visualizations that help understanding them
+- [X] Discuss the obtained results and generate visualizations that help understanding them
 
 ### Task 4: De-synchornized results
 
@@ -64,7 +64,7 @@ The goal of the project is to learn the basic concepts and techniques related to
 ### Task 5: Visual representation optical flow
 
 - [X] Plot the optical flow
-- [ ] Propose a simplification method for a clean visualization
+- [X] Propose a simplification method for a clean visualization
 
-
+## Week 2:
 
