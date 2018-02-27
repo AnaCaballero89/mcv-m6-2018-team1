@@ -16,8 +16,17 @@ The goal of the project is to learn the basic concepts and techniques related to
 
 
 ### Task 1: Segmentation metrics. Understand precision & recall
-- [ ] Given the sequences TEST A and TEST B using different background substraction methods, implement and compute the evaluation measures.
 
+- [X] Given the sequences TEST A and TEST B using different background substraction methods, implement and compute the evaluation measures 
+    - True Positive
+    - True Negative
+    - False Positive
+    - False Negative
+    - Precision
+    - Recall
+    - F1 Score
+    
+- [X] Explain the numerical results obtained and provide an interpretation of the different values
 
 
 ### Task 2: Segmentation metrics. Temporal analysis
