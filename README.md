@@ -11,6 +11,11 @@ The goal of the project is to learn the basic concepts and techniques related to
 | Raül Duaigües |[raulduaigues](https://github.com/raulduaigues)|
 | Yevgeniy Kadranov|[YevKad](https://github.com/YevKad)|
 
+### Code execution
+
+Every week's submission will be placed in a different folder called 'weekX', where X is the number of the corresponding week. Each of these folders contains a 'main.py' file that can be ran to execute the submitted code.
+
+
 ## Week 1: Introduction, DB and Evaluation metrics
 
 ### Task 1: Segmentation metrics. Understand precision & recall
