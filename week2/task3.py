@@ -6,3 +6,7 @@ import numpy as np
 import os
 from opticalFlowMetrics import opticalFlowMetrics
 from utils import *
+
+
+def task3():
+    pass
