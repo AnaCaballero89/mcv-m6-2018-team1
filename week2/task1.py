@@ -54,7 +54,7 @@ def task1():
     while alpha<=5:
         print alpha
         gauss=getGauss(inputpath,1050, 1099)
-        bg=getBG(inputpath,frmStart+50,frmEnd+50,gauss, alpha,tstbg)
+        bg=getBG(inputpath,frmStart+50,frmEnd+50,gauss, alpha)
         TestAmetric = []
         TestATP = []
         TestBTP = []
@@ -70,7 +70,7 @@ def task1():
         for idx, img in enumerate(groundTruthImgs):
             pred_labels = bg[idx,:,:]
             true_labels=groundTruthImgs[idx,:,:]
-            TP, TN, FP, FN = evaluation(pred_labels,true_labels,idx,'A')
+            TP, TN, FP, FN = evaluation(pred_labels,true_labels)
             TestATP.append(TP)
             TP_fnA+=TP
             TN_fnA+=TN
