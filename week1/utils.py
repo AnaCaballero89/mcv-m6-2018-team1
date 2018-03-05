@@ -39,12 +39,12 @@ def readTest(abSequencePath):
     return AImgs, BImgs
 
 
-def readGT(groundTruthPath):
+def readGT(groundTruthPath, frmStart=1201, frmEnd=1400):
     groundTruthImgNames = os.listdir(groundTruthPath)
     groundTruthImgNames.sort()
     groundTruthImgs = []
     for name in groundTruthImgNames:
-        if int(name[-8:-4]) > 1200 and int(name[-8:-4]) < 1401:
+        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
             im = cv2.threshold(cv2.cvtColor(cv2.imread(groundTruthPath+name), cv2.COLOR_BGR2GRAY), 169, 1, cv2.THRESH_BINARY)[1]
             groundTruthImgs.append(im)
     groundTruthImgs = np.asarray(groundTruthImgs)
