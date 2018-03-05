@@ -164,3 +164,41 @@ def readOFimages(ofOrPath):
                 im = cv2.imread(ofOrPath + name)
                 ofImages.append(im)
     return ofImages
+
+def getGauss(indir, frmStart, frmEnd):
+    ImgNames = os.listdir(indir)
+    ImgNames.sort()
+    im = cv2.cvtColor(cv2.imread(indir + ImgNames[0]), cv2.COLOR_BGR2GRAY)
+    gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1), 'uint8')
+
+    i = 0
+    for idx, name in enumerate(ImgNames):
+        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
+            # im=cv2.cvtColor(cv2.imread(indir+name), cv2.COLOR_BGR2HSV)
+            im = cv2.cvtColor(cv2.imread(indir + name), cv2.COLOR_BGR2GRAY)
+            gauss[..., i] = im
+            i += 1
+    return gauss.mean(axis=2), gauss.std(axis=2)
+
+def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptive=False):
+    ImgNames = os.listdir(indir)
+    ImgNames.sort()
+    BGimgs = []
+    nms = []
+    for idx, name in enumerate(ImgNames):
+        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
+            im = cv2.cvtColor(cv2.imread(indir + name), cv2.COLOR_BGR2GRAY)
+            bg = (abs(im - gauss[0]) >= alpha * (gauss[1] + 2)).astype(int)
+
+            if adaptive:
+                gmean = rho*im + (1-rho)*gauss[0]
+                gvar = (rho*(im-gmean))**2 + (1-rho)*gausss[1]
+                gauss[0][bg == 0] = gmean[bg == 0]
+                gauss[1][bg == 0] = gvar[bg == 0]
+
+            BGimgs.append(bg)
+            if outdir is not None:
+                im = Image.fromarray((bg * 255).astype('uint8'))
+
+                im.save(outdir + name)
+    return np.asarray(BGimgs)
