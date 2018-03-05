@@ -45,7 +45,7 @@ def readGT(groundTruthPath):
     groundTruthImgs = []
     for name in groundTruthImgNames:
         if int(name[-8:-4]) > 1200 and int(name[-8:-4]) < 1401:
-            im = cv2.threshold(cv2.cvtColor(cv2.imread(groundTruthPath+name), cv2.COLOR_BGR2GRAY), 160, 1, cv2.THRESH_BINARY)[1]
+            im = cv2.threshold(cv2.cvtColor(cv2.imread(groundTruthPath+name), cv2.COLOR_BGR2GRAY), 169, 1, cv2.THRESH_BINARY)[1]
             groundTruthImgs.append(im)
     groundTruthImgs = np.asarray(groundTruthImgs)
     return groundTruthImgs
