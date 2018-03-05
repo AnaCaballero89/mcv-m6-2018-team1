@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 
-def evaluation(pred_labels,true_labels):
+def evaluation(pred_labels, true_labels):
     TP = np.sum(np.logical_and(pred_labels == 1, true_labels == 1))
     # True Negative (TN): we predict a label of 0 (negative), and the true label is 0.
     TN = np.sum(np.logical_and(pred_labels == 0, true_labels == 0))
@@ -14,13 +14,11 @@ def evaluation(pred_labels,true_labels):
     FN = np.sum(np.logical_and(pred_labels == 0, true_labels == 1))
     return TP, TN, FP, FN
 
-
 def metrics(TP, TN, FP, FN):
     Pres=float(TP)/(TP+FP+1e-10)
     Recall=float(TP)/(TP+FN+1e-10)
     F1=2*(Pres*Recall)/(Pres+Recall+1e-10)
     return Recall, Pres, F1
-
 
 def readTest(abSequencePath):
     imgNames = os.listdir(abSequencePath)
@@ -37,7 +35,6 @@ def readTest(abSequencePath):
     AImgs = np.asarray(AImgs)
     BImgs = np.asarray(BImgs)
     return AImgs, BImgs
-
 
 def readGT(groundTruthPath, frmStart=1201, frmEnd=1400):
     groundTruthImgNames = os.listdir(groundTruthPath)
@@ -66,7 +63,6 @@ def plotF1(a, b, fl=True):
         plt.savefig('F1.png')
     plt.close()
 
-
 def plots(gt, a, b, fl=True):
     fig = plt.figure(figsize=(10, 5))
     plt.axis([0, len(gt), 0, max(gt) + 500])
@@ -84,7 +80,6 @@ def plots(gt, a, b, fl=True):
         plt.savefig('TotalFG.png')
     plt.close()
 
-
 def plot_desync(gt, A, name, step_lst, fl=True):
     fig = plt.figure(figsize=(10, 5))
     plt.axis([0, len(gt), 0, 1])
@@ -101,7 +96,6 @@ def plot_desync(gt, A, name, step_lst, fl=True):
     else:
         plt.savefig('Des.png')
     plt.close()
-
 
 def OFplots(ofImages, images):
     step = 10
@@ -150,7 +144,6 @@ def desyncronization(gt, a, step=1):
     TestDes = np.asarray(TestDes)
     return TestDes
 
-
 def readOF(ofPath):
     imgNames = os.listdir(ofPath)
     imgNames.sort()
@@ -160,7 +153,6 @@ def readOF(ofPath):
             # images.append(cv2.cvtColor(cv2.imread(ofPath+name), cv2.COLOR_BGR2GRAY))
             images.append(cv2.imread(ofPath+name, -1))
     return images
-
 
 def readOFimages(ofOrPath):
     imgNames = os.listdir(ofOrPath)
