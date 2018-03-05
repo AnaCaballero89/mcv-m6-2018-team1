@@ -13,7 +13,7 @@ from utils import *
 # Read AB sequence images
 abSequencePath = 'results_testAB_changedetection/results/highway/'
 # Read ground truth images (from frame 1201 to frame 1400)
-groundTruthPath = '../highway/groundtruth/'
+groundTruthPath = '../datasets/highway/groundtruth/'
 
 AImgs, BImgs = readTest(abSequencePath)
 groundTruthImgs = readGT(groundTruthPath)
