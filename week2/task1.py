@@ -1,20 +1,19 @@
 import sys
-sys.path.append('../week1/')
+sys.path.append('../')
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-from opticalFlowMetrics import opticalFlowMetrics
 from utils import *
 
 def task1():
     inputpath='../datasets/highway/input/'
     groundTruthPath='../datasets/highway/groundtruth/'
-    
+
     frmStart=1050
     frmEnd=1099
     groundTruthImgs = readGT(groundTruthPath,1050+50,frmEnd+50)
-    
+
     alpha=0.1
     alpharecall=[]
     alphaprec=[]
@@ -34,8 +33,8 @@ def task1():
         TN_fnA=0
         FP_fnA=0
         FN_fnA=0
-    
-        
+
+
         for idx, img in enumerate(groundTruthImgs):
             pred_labels = bg[idx,:,:]
             true_labels=groundTruthImgs[idx,:,:]
@@ -47,15 +46,15 @@ def task1():
             FN_fnA+=FN
             TestTotalFG.append(TP+FN)
             TestAmetric.append(metrics(TP, TN, FP, FN))
-        
+
         alphaf1.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[2])
         alpharecall.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[0])
         alphaprec.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[1])
-    
+
         alphalst.append(alpha)
         alpha+=0.1
     a=np.asarray(TestAmetric)
-    
+
     fig = plt.figure(figsize=(10, 5))
     #plt.axis([0, len(alphaf1), 0, 1])
     plt.title('Alpha vs Metrics')

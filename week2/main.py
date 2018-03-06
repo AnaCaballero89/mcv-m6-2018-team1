@@ -1,10 +1,9 @@
 import sys
-sys.path.append('../week1/')
+sys.path.append('../')
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-from opticalFlowMetrics import opticalFlowMetrics
 from utils import *
 from task1 import task1
 from task2 import task2
