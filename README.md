@@ -73,3 +73,51 @@ Every week's submission will be placed in a different folder called 'weekX', whe
 
 ## Week 2:
 
+
+### Task 1: Gaussian modelling
+
+- [X] Gaussian function to model each background pixel 
+    - First 50% of the test sequence to model background
+    - Second 50% to segment the foreground
+    
+- [X] Evaluate using Precision, Recall, F1-score vs alpha
+- [X] Evaluate using Precision vs Recall curve and Area Under the Curve (AUC)
+
+### Task 2: Adaptive modelling
+
+- [ ] Gaussian function to model each background pixel 
+    - First 50% frames for training
+    - Second 50% left background adapts
+    
+- [ ] Best pair of values (𝛼, ⍴) to maximize F1-score
+    - Obtain first the best 𝛼 for non-recursive, and later estimate ⍴ for the recursive cases
+    
+- [ ] Compare both the adaptive and non-adaptive version and evaluate them for all 3 sequences proposed using F1 score/AUC
+
+
+### Task 3: Comparison with state-of-the-art
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
