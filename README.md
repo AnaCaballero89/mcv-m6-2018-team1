@@ -4,12 +4,14 @@ The goal of the project is to learn the basic concepts and techniques related to
 
 ### **TEAM 1**
 
-| Members     | Github |
-| :---      | ---:       |
-| Santiago Barbarisi |[SantiagoBarbarisi](https://github.com/SantiagoBarbarisi)|
-| Lorenzo Betto |[BourbonCreams](https://github.com/BourbonCreams)|
-| Raül Duaigües |[raulduaigues](https://github.com/raulduaigues)|
-| Yevgeniy Kadranov|[YevKad](https://github.com/YevKad)|
+| Members     | Github | Mail |
+| :---      | ---:       | ---: |
+| [Santiago Barbarisi](https://www.linkedin.com/in/santiago-barbarisi-abb79787/) |[SantiagoBarbarisi](https://github.com/SantiagoBarbarisi)| santiago.barbarisi@e-campus.uab.cat |
+| [Lorenzo Betto](https://www.linkedin.com/in/lorenzo-betto/) |[BourbonCreams](https://github.com/BourbonCreams)|   lorenzo.betto@e-campus.uab.cat  |
+| [Raül Duaigües](https://www.linkedin.com/in/ra%C3%BCl-duaig%C3%BCes-84943b103/) |[raulduaigues](https://github.com/raulduaigues)|    raul.duaigues@e-campus.uab.cat  |
+| [Yevgeniy Kadranov](https://www.linkedin.com/in/yevkad/)|[YevKad](https://github.com/YevKad)|   yevgeniy.kadranov@e-campus.uab.cat   |
+
+
 
 ### Code execution
 
@@ -85,18 +87,23 @@ Every week's submission will be placed in a different folder called 'weekX', whe
 
 ### Task 2: Adaptive modelling
 
-- [ ] Gaussian function to model each background pixel 
+- [X] Gaussian function to model each background pixel 
     - First 50% frames for training
     - Second 50% left background adapts
     
-- [ ] Best pair of values (𝛼, ⍴) to maximize F1-score
+- [X] Best pair of values (𝛼, ⍴) to maximize F1-score
     - Obtain first the best 𝛼 for non-recursive, and later estimate ⍴ for the recursive cases
     
-- [ ] Compare both the adaptive and non-adaptive version and evaluate them for all 3 sequences proposed using F1 score/AUC
+- [X] Compare both the adaptive and non-adaptive version and evaluate them for all 3 sequences proposed using F1 score/AUC
 
 
 ### Task 3: Comparison with state-of-the-art
 
+- [X] Evaluate precision vs recall
+- [X] Evaluate the sequences than benefit more one algorithm and explain why
+
+### Task 4: Color Sequences
+- [X] Update your implementation to support color sequences
 
 
 
