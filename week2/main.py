@@ -7,7 +7,7 @@ import os
 from utils import *
 from task1 import task1
 from task2 import task2
-from task3 import task3
+#from task3 import task3
 from task4 import task4
 
 dataset='fall' # 'highway', 'traffic'
@@ -40,7 +40,7 @@ groundTruthImgs = readGT(groundTruthPath, te_frmStart, te_frmEnd)
 #########
 
 # Gaussian distribution + evaluation
-task1(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, grid_search=True)
+# task1(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, grid_search=True)
 
 
 #########
@@ -56,7 +56,7 @@ task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd
 #########
 
 # Comparison with state-of-the-art
-task3(dataset)
+# task3(dataset, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd)
 
 
 #########
