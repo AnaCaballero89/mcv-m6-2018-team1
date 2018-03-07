@@ -50,7 +50,7 @@ dimension = 1
 #########
 
 # Recursive Gaussian modeling + Evaluate and comparison to non-recursive
-task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dimension, grid_search=False, dataset=dataset)
+# task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dimension, grid_search=True, dataset=dataset)
 
 
 #########
@@ -66,4 +66,4 @@ task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd
 #########
 
 # Color sequences
-task4()
+task4(dataset, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd)
