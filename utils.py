@@ -191,12 +191,12 @@ def getGauss(indir, frmStart, frmEnd, dimension=1):
             #if dimension == 1:
             im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
             gauss[..., i] = im
-            mean = gauss.mean(axis=2)
-            var = gauss.var(axis=2)
+            #mean = gauss.mean(axis=2)
+            #var = gauss.var(axis=2)
 
             i += 1
 
-    return mean, var
+    return gauss.mean(axis=2), gauss.var(axis=2)
 
 
 def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptive=False, dimension=1):
@@ -206,8 +206,8 @@ def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptiv
     for idx, name in enumerate(ImgNames):
         if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
 
-            im = cv2.imread(indir + name)
-            im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+            #im = cv2.imread(indir + name)
+            im = cv2.cvtColor(cv2.imread(indir + name), cv2.COLOR_BGR2GRAY)
             bg = (abs(im - gauss[0]) >= alpha * (np.sqrt(gauss[1]) + 2)).astype(int)
 
             if adaptive:
