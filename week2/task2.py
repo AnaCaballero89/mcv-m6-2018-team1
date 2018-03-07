@@ -3,7 +3,7 @@ sys.path.append('../')
 from utils import *
 
 
-def task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, grid_search=False, dataset='highway'):
+def task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dimension=1, grid_search=False, dataset='highway'):
 
     print 'TASK2 in process'
 
@@ -20,10 +20,10 @@ def task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_fr
     if grid_search:
         alpha, rho = get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset)
 
-    gauss = getGauss(inputpath, tr_frmStart, tr_frmEnd)
+    gauss = getGauss(inputpath, tr_frmStart, tr_frmEnd, dimension=dimension)
 
     # Adaptive model
-    bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, rho, adaptive=True)
+    bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, rho, adaptive=True, dimension=dimension)
 
     TP, TN, FP, FN = added_evaluation(groundTruthImgs, bgad)
     Recall, Pres, F1 = metrics(TP, TN, FP, FN)

@@ -7,10 +7,10 @@ import os
 from utils import *
 from task1 import task1
 from task2 import task2
-#from task3 import task3
+# from task3 import task3
 from task4 import task4
 
-dataset='fall' # 'highway', 'traffic'
+dataset = 'highway'  # 'fall', 'highway', 'traffic'
 
 inputpath='../datasets/' + dataset + '/input/'
 groundTruthPath='../datasets/' + dataset + '/groundtruth/'
@@ -35,12 +35,14 @@ elif dataset == 'traffic':
 
 groundTruthImgs = readGT(groundTruthPath, te_frmStart, te_frmEnd)
 
+dimension = 1
+
 #########
 # Task1 #
 #########
 
 # Gaussian distribution + evaluation
-# task1(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, grid_search=True)
+#task1(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dimension=dimension, grid_search=True)
 
 
 #########
@@ -48,7 +50,7 @@ groundTruthImgs = readGT(groundTruthPath, te_frmStart, te_frmEnd)
 #########
 
 # Recursive Gaussian modeling + Evaluate and comparison to non-recursive
-task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, grid_search=True, dataset=dataset)
+task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dimension, grid_search=False, dataset=dataset)
 
 
 #########
