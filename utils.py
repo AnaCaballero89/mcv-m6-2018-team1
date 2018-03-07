@@ -2,6 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+from PIL import Image
 
 
 def evaluation(pred_labels, true_labels):
@@ -14,11 +15,13 @@ def evaluation(pred_labels, true_labels):
     FN = np.sum(np.logical_and(pred_labels == 0, true_labels == 1))
     return TP, TN, FP, FN
 
+
 def metrics(TP, TN, FP, FN):
     Pres=float(TP)/(TP+FP+1e-10)
     Recall=float(TP)/(TP+FN+1e-10)
     F1=2*(Pres*Recall)/(Pres+Recall+1e-10)
     return Recall, Pres, F1
+
 
 def readTest(abSequencePath):
     imgNames = os.listdir(abSequencePath)
@@ -36,6 +39,7 @@ def readTest(abSequencePath):
     BImgs = np.asarray(BImgs)
     return AImgs, BImgs
 
+
 def readGT(groundTruthPath, frmStart=1201, frmEnd=1400):
     groundTruthImgNames = os.listdir(groundTruthPath)
     groundTruthImgNames.sort()
@@ -46,6 +50,7 @@ def readGT(groundTruthPath, frmStart=1201, frmEnd=1400):
             groundTruthImgs.append(im)
     groundTruthImgs = np.asarray(groundTruthImgs)
     return groundTruthImgs
+
 
 def plotF1(a, b, fl=True):
     fig = plt.figure(figsize=(10, 5))
@@ -62,6 +67,7 @@ def plotF1(a, b, fl=True):
     else:
         plt.savefig('F1.png')
     plt.close()
+
 
 def plots(gt, a, b, fl=True):
     fig = plt.figure(figsize=(10, 5))
@@ -80,6 +86,7 @@ def plots(gt, a, b, fl=True):
         plt.savefig('TotalFG.png')
     plt.close()
 
+
 def plot_desync(gt, A, name, step_lst, fl=True):
     fig = plt.figure(figsize=(10, 5))
     plt.axis([0, len(gt), 0, 1])
@@ -96,6 +103,7 @@ def plot_desync(gt, A, name, step_lst, fl=True):
     else:
         plt.savefig('Des.png')
     plt.close()
+
 
 def OFplots(ofImages, images):
     step = 10
@@ -128,6 +136,7 @@ def OFplots(ofImages, images):
         plt.close()
         ind += 1
 
+
 def desyncronization(gt, a, step=1):
     idx1 = 0
     idx2 = step
@@ -144,6 +153,7 @@ def desyncronization(gt, a, step=1):
     TestDes = np.asarray(TestDes)
     return TestDes
 
+
 def readOF(ofPath):
     imgNames = os.listdir(ofPath)
     imgNames.sort()
@@ -153,6 +163,7 @@ def readOF(ofPath):
             # images.append(cv2.cvtColor(cv2.imread(ofPath+name), cv2.COLOR_BGR2GRAY))
             images.append(cv2.imread(ofPath+name, -1))
     return images
+
 
 def readOFimages(ofOrPath):
     imgNames = os.listdir(ofOrPath)
@@ -164,6 +175,7 @@ def readOFimages(ofOrPath):
                 im = cv2.imread(ofOrPath + name)
                 ofImages.append(im)
     return ofImages
+
 
 def getGauss(indir, frmStart, frmEnd):
     ImgNames = os.listdir(indir)
@@ -180,11 +192,11 @@ def getGauss(indir, frmStart, frmEnd):
             i += 1
     return gauss.mean(axis=2), gauss.std(axis=2)
 
+
 def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptive=False):
     ImgNames = os.listdir(indir)
     ImgNames.sort()
     BGimgs = []
-    nms = []
     for idx, name in enumerate(ImgNames):
         if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
             im = cv2.cvtColor(cv2.imread(indir + name), cv2.COLOR_BGR2GRAY)
@@ -192,7 +204,7 @@ def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptiv
 
             if adaptive:
                 gmean = rho*im + (1-rho)*gauss[0]
-                gvar = (rho*(im-gmean))**2 + (1-rho)*gausss[1]
+                gvar = (rho*(im-gmean))**2 + (1-rho)*gauss[1]
                 gauss[0][bg == 0] = gmean[bg == 0]
                 gauss[1][bg == 0] = gvar[bg == 0]
 
@@ -202,3 +214,187 @@ def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptiv
 
                 im.save(outdir + name)
     return np.asarray(BGimgs)
+
+
+def annot_max(x, y, ax=None):
+    xmax = x[np.argmax(y)]
+    ymax = y.max()
+    text = "$\\alpha$={:.1f}, F1={:.3f}".format(xmax, ymax)
+    if not ax:
+        ax = plt.gca()
+    bbox_props = dict(boxstyle="square,pad=0.3", fc="w", ec="k", lw=0.72)
+    arrowprops = dict(arrowstyle="->", connectionstyle="angle,angleA=0,angleB=60")
+    kw = dict(xycoords='data', textcoords="axes fraction",
+              arrowprops=arrowprops, bbox=bbox_props, ha="right", va="top")
+    ax.annotate(text, xy=(xmax, ymax), xytext=(0.7, ymax + 0.2), **kw)
+
+
+def added_evaluation(groundTruthImgs, bgad):
+    TP_fnA = 0
+    TN_fnA = 0
+    FP_fnA = 0
+    FN_fnA = 0
+
+    for idx, img in enumerate(groundTruthImgs):
+        pred_labels = bgad[idx, :, :]
+        true_labels = groundTruthImgs[idx, :, :]
+        TP, TN, FP, FN = evaluation(pred_labels, true_labels)
+        TP_fnA += TP
+        TN_fnA += TN
+        FP_fnA += FP
+        FN_fnA += FN
+
+    return TP_fnA, TN_fnA, FP_fnA, FN_fnA
+
+
+def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, show_plt=False, adaptive=True):
+    alpha_start = 0.1
+    rho_start = 0.
+    maxa = 5
+    maxr = 0
+
+    up = 0.1
+    f1 = []
+
+    inda = 0
+    if adaptive:
+        rho_start = 0.1
+        maxr = 1
+        indr = 0
+        f1_mat = np.zeros((int(maxa / up), int(maxr / up)))
+    else:
+        TestATP = []
+        TestAFN = []
+        TestAFP = []
+        TestATN = []
+        prec = []
+        recall = []
+        indr = None
+        f1_mat = np.zeros((int(maxa / up),))
+
+    alpha = alpha_start
+    rho = rho_start
+
+    while alpha <= maxa:
+
+        while rho <= maxr:
+            print alpha, rho
+
+            gauss = getGauss(inputpath, tr_frmStart, tr_frmEnd)
+
+            # Adaptive model
+            bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, rho, adaptive=adaptive)
+
+            # Adaptative variables
+            TP_fnA, TN_fnA, FP_fnA, FN_fnA = added_evaluation(groundTruthImgs, bgad)
+            f1.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[2])
+            f1_mat[inda, indr] = metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[2]
+
+            rho += up
+            if indr is not None:
+                indr += 1
+
+        alpha += up
+        inda += 1
+        rho = 0.1
+
+        if adaptive:
+            indr = 0
+        else:
+            tot = TP_fnA + TN_fnA + FP_fnA + FN_fnA
+            TestATP.append(TP_fnA / float(tot))
+            TestATN.append(TN_fnA / float(tot))
+            TestAFP.append(FP_fnA / float(tot))
+            TestAFN.append(FN_fnA / float(tot))
+            prec.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[1])
+            recall.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[0])
+            rho = 0
+
+    x = np.unravel_index(np.argmax(f1_mat), f1_mat.shape)
+    alpha = up * (x[0] + 1)
+
+    if adaptive:
+        rho = up * (x[0] + 1)
+
+        plt.figure(figsize=(10, 5))
+        plt.title('Alpha vs Rho vs f1 (adaptive)')
+        plt.imshow(f1_mat, extent=[0.1, 1, 0.1, 5])
+        plt.scatter(rho, alpha)
+        plt.xlabel('Rho')
+        plt.ylabel('Alpha')
+        axes = plt.gca()
+        axes.set_xlim([0.1, 1])
+        axes.set_ylim([0.1, 5])
+        if show_plt:
+            plt.show()
+            plt.close()
+        else:
+            plt.savefig('F1_2ad.png')
+    else:
+        alphalst = np.arange(alpha_start, maxa+0.1, up)
+        fig, ax = plt.subplots()
+        # ax.stackplot(alphalst, TestATP, TestATN, TestAFP, TestAFN)
+        # plt.show()
+        # plt.close()
+
+        plt.axis([0, maxa, 0, 1])
+        ax.xaxis.set_ticks(np.arange(0, maxa, 1))
+        ax.yaxis.set_ticks(np.arange(0, 1.01, 0.1))
+        plt.title('Alpha vs f1 (non-adaptive)')
+        plt.plot(alphalst, f1, c='r', label='F1')
+        plt.plot(alphalst, recall, c='b', label='Recall')
+        plt.plot(alphalst, prec, c='g', label='Precision')
+        plt.legend(loc='lower right')
+        plt.xlabel('$\\alpha$')
+        plt.ylabel('Metrics')
+        # plt.tight_layout()
+        plt.show()
+        annot_max(np.asarray(alphalst), np.asarray(f1))
+        plt.close()
+
+    return alpha, rho
+
+
+"""
+def getGauss2(indir, frmStart, frmEnd):
+    ImgNames = os.listdir(indir)
+    ImgNames.sort()
+    im = cv2.cvtColor(cv2.imread(indir + ImgNames[0]), cv2.COLOR_BGR2GRAY)
+    gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1), 'uint8')
+
+    i = 0
+    for idx, name in enumerate(ImgNames):
+        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
+            # im=cv2.cvtColor(cv2.imread(indir+name), cv2.COLOR_BGR2HSV)
+            im = cv2.cvtColor(cv2.imread(indir + name), cv2.COLOR_BGR2GRAY)
+            gauss[..., i] = im
+            i += 1
+            data=gauss[...,:i]
+
+            im = Image.fromarray(data.mean(axis=2))
+            if im.mode != 'RGB':
+                im = im.convert('RGB')
+            im.save('BGgaus/'+str(i)+'MeanBG.png')
+    return gauss.mean(axis=2), gauss.std(axis=2)
+
+def evaluation2(pred_labels,true_labels,frame,tst):
+    TP = np.sum(np.logical_and(pred_labels == 1, true_labels == 1)) 
+    # True Negative (TN): we predict a label of 0 (negative), and the true label is 0.
+    TN = np.sum(np.logical_and(pred_labels == 0, true_labels == 0))     
+    # False Positive (FP): we predict a label of 1 (positive), but the true label is 0.
+    FP = np.sum(np.logical_and(pred_labels == 1, true_labels == 0))    
+    # False Negative (FN): we predict a label of 0 (negative), but the true label is 1.
+    FN = np.sum(np.logical_and(pred_labels == 0, true_labels == 1))
+
+    rgbArray = np.zeros((pred_labels.shape[0],pred_labels.shape[1],3), 'uint8')
+    r=np.logical_and(pred_labels == 1, true_labels == 0).astype(int)
+    g=np.logical_and(pred_labels == 1, true_labels == 1).astype(int)
+    b=np.logical_and(pred_labels == 0, true_labels == 1).astype(int)
+    rgbArray[..., 0] = r*255
+    rgbArray[..., 1] = g*255
+    rgbArray[..., 2] = b*255
+    im = Image.fromarray(rgbArray)
+    im.save(tst+'bg_'+str(frame)+'.jpg')
+    return TP, TN, FP, FN
+
+"""
