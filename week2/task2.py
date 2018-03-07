@@ -1,8 +1,6 @@
 import sys
 sys.path.append('../')
-import numpy as np
 from utils import *
-import matplotlib.pyplot as plt
 
 
 def task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, grid_search=False, dataset='highway'):
@@ -13,14 +11,14 @@ def task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_fr
         alpha = 3.
         rho = .3
     elif dataset == 'fall':
-        alpha = 0.
-        rho = .0
+        alpha = 3.5
+        rho = .1
     elif dataset == 'traffic':
-        alpha = 0.
-        rho = .0
+        alpha = 2.9
+        rho = .2
 
     if grid_search:
-        alpha, rho = get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd)
+        alpha, rho = get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset)
 
     gauss = getGauss(inputpath, tr_frmStart, tr_frmEnd)
 

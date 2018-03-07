@@ -1,12 +1,6 @@
 import sys
 sys.path.append('../')
-import cv2
-import matplotlib.pyplot as plt
-import numpy as np
-import os
 from utils import *
-from PIL import Image
-from sklearn import metrics as skmetrics
 
 
 def task1(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, grid_search=True, dataset='highway'):
@@ -20,7 +14,7 @@ def task1(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_fr
         alpha = 1.8
 
     if grid_search:
-        alpha = get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, adaptive=False)[0]
+        alpha = get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset, adaptive=False)[0]
 
     gauss = getGauss(inputpath, tr_frmStart, tr_frmEnd)
 
