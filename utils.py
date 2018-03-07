@@ -178,30 +178,50 @@ def readOFimages(ofOrPath):
     return ofImages
 
 
-def getGauss(indir, frmStart, frmEnd):
+def getGauss(indir, frmStart, frmEnd, dimension=1):
     ImgNames = os.listdir(indir)
     ImgNames.sort()
     im = cv2.cvtColor(cv2.imread(indir + ImgNames[0]), cv2.COLOR_BGR2GRAY)
-    gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1), 'uint8')
+    mean = []
+    var = []
+    for dim in range(0, dimension):
+        i = 0
+        gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1), 'uint8')
+        for idx, name in enumerate(ImgNames):
+            if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
+                im = cv2.imread(indir + name)
+                if dimension == 1:
+                    im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+                    gauss[..., i] = im
+                else:
+                    gauss[..., i] = im[:, :, dim]
 
-    i = 0
-    for idx, name in enumerate(ImgNames):
-        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
-            # im=cv2.cvtColor(cv2.imread(indir+name), cv2.COLOR_BGR2HSV)
-            im = cv2.cvtColor(cv2.imread(indir + name), cv2.COLOR_BGR2GRAY)
-            gauss[..., i] = im
-            i += 1
-    return gauss.mean(axis=2), gauss.std(axis=2)
+                i += 1
+
+        mean.append(gauss.mean(axis=2))
+        var.append(gauss.var(axis=2))
+
+    if dimension == 1:
+        mean = np.asanyarray(mean[0])
+        var = np.asanyarray(var[0])
+
+    return mean, var
 
 
-def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptive=False):
+def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptive=False, dimension=1):
     ImgNames = os.listdir(indir)
     ImgNames.sort()
     BGimgs = []
     for idx, name in enumerate(ImgNames):
         if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
-            im = cv2.cvtColor(cv2.imread(indir + name), cv2.COLOR_BGR2GRAY)
-            bg = (abs(im - gauss[0]) >= alpha * (gauss[1] + 2)).astype(int)
+
+            im = cv2.imread(indir + name)
+            if dimension == 1:
+                im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+
+            bg = np.ones((im.shape[0], im.shape[1], frmEnd - frmStart + 1), 'uint8')
+            for dim in range(0,dimension):
+                bg = (abs(im[:, :, dim] - gauss[0]) >= alpha * (gauss[1] + 2)).astype(int)
 
             if adaptive:
                 gmean = rho*im + (1-rho)*gauss[0]
@@ -212,8 +232,8 @@ def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptiv
             BGimgs.append(bg)
             if outdir is not None:
                 im = Image.fromarray((bg * 255).astype('uint8'))
-
                 im.save(outdir + name)
+
     return np.asarray(BGimgs)
 
 
@@ -263,6 +283,7 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
         maxr = 1
         indr = 0
         f1_mat = np.zeros((int(maxa / up), int(maxr / up)))
+
     else:
         TestATP = []
         TestAFN = []
@@ -289,6 +310,7 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
             # Adaptative variables
             TP_fnA, TN_fnA, FP_fnA, FN_fnA = added_evaluation(groundTruthImgs, bgad)
             f1.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[2])
+
             f1_mat[inda, indr] = metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[2]
 
             rho += up
@@ -311,13 +333,15 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
             recall.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[0])
             rho = 0
 
-    x = np.unravel_index(np.argmax(f1_mat), f1_mat.shape)
-    alpha = up * (x[0] + 1)
+    f1_coord = np.unravel_index(np.argmax(f1_mat), f1_mat.shape)
+
+    alpha = up * (f1_coord[0] + 1)
+
 
     if adaptive:
-        rho = up * (x[1] + 1)
+        rho = up * (f1_coord[1] + 1)
 
-        plt.figure(figsize=(10, 5))
+        plt.figure(figsize=(10, 10))
         plt.title('Alpha vs Rho vs f1 (adaptive) - Dataset: ' + dataset)
         plt.imshow(f1_mat, extent=[rho_start, maxr, alpha_start, maxa])
         plt.scatter(rho, alpha)
@@ -326,6 +350,7 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
         axes = plt.gca()
         axes.set_xlim([rho_start, maxr])
         axes.set_ylim([alpha_start, maxa])
+
         if show_plt:
             plt.show()
             plt.close()
