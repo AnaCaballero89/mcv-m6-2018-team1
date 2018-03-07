@@ -4,6 +4,7 @@ import numpy as np
 import os
 from PIL import Image
 from sklearn import metrics as skmetrics
+import pickle
 
 
 def evaluation(pred_labels, true_labels):
@@ -308,6 +309,8 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
             if indr is not None:
                 indr += 1
 
+
+
         alpha += up
         inda += 1
         rho = 0.1
@@ -325,24 +328,12 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
             rho = 0
 
     f1_coord = np.unravel_index(np.argmax(f1_mat), f1_mat.shape)
+    pickle.dump(f1_mat,open(dataset+'_f1.p','wb'))
 
     alpha = up * (f1_coord[0] + 1)
 
     if adaptive:
         rho = up * (f1_coord[1] + 1)
-
-        reclist = rec_mat[f1_coord[0], :]
-        preclist = pre_mat[f1_coord[0], :]
-
-        title = dataset + ' DS frms ' + str(te_frmStart) + '-' + str(te_frmEnd) + ' - $\\alpha$ [0.1-10.0] - for fix Alpha'
-        roc(reclist, preclist, title, show_plt, dataset)
-
-        reclist = rec_mat[:, f1_coord[1]]
-        preclist = pre_mat[:, f1_coord[1]]
-
-        title = dataset + ' DS frms ' + str(te_frmStart) + '-' + str(te_frmEnd) + ' - $\\alpha$ [0.1-10.0] - for fix Rho'
-        roc(reclist, preclist, title, show_plt, dataset)
-
         plt.figure(figsize=(10, 10))
         plt.title('Alpha vs Rho vs f1 (adaptive) - Dataset: ' + dataset)
         plt.imshow(f1_mat, extent=[rho_start, maxr, alpha_start, maxa])
@@ -429,48 +420,3 @@ def roc(recall_lst, precision_lst, title='', show_plt=False, dataset='highway'):
         fig.show()
 
     plt.savefig('ROC_' + dataset + '.png')
-
-
-"""
-def getGauss2(indir, frmStart, frmEnd):
-    ImgNames = os.listdir(indir)
-    ImgNames.sort()
-    im = cv2.cvtColor(cv2.imread(indir + ImgNames[0]), cv2.COLOR_BGR2GRAY)
-    gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1), 'uint8')
-
-    i = 0
-    for idx, name in enumerate(ImgNames):
-        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
-            # im=cv2.cvtColor(cv2.imread(indir+name), cv2.COLOR_BGR2HSV)
-            im = cv2.cvtColor(cv2.imread(indir + name), cv2.COLOR_BGR2GRAY)
-            gauss[..., i] = im
-            i += 1
-            data=gauss[...,:i]
-
-            im = Image.fromarray(data.mean(axis=2))
-            if im.mode != 'RGB':
-                im = im.convert('RGB')
-            im.save('BGgaus/'+str(i)+'MeanBG.png')
-    return gauss.mean(axis=2), gauss.std(axis=2)
-
-def evaluation2(pred_labels,true_labels,frame,tst):
-    TP = np.sum(np.logical_and(pred_labels == 1, true_labels == 1)) 
-    # True Negative (TN): we predict a label of 0 (negative), and the true label is 0.
-    TN = np.sum(np.logical_and(pred_labels == 0, true_labels == 0))     
-    # False Positive (FP): we predict a label of 1 (positive), but the true label is 0.
-    FP = np.sum(np.logical_and(pred_labels == 1, true_labels == 0))    
-    # False Negative (FN): we predict a label of 0 (negative), but the true label is 1.
-    FN = np.sum(np.logical_and(pred_labels == 0, true_labels == 1))
-
-    rgbArray = np.zeros((pred_labels.shape[0],pred_labels.shape[1],3), 'uint8')
-    r=np.logical_and(pred_labels == 1, true_labels == 0).astype(int)
-    g=np.logical_and(pred_labels == 1, true_labels == 1).astype(int)
-    b=np.logical_and(pred_labels == 0, true_labels == 1).astype(int)
-    rgbArray[..., 0] = r*255
-    rgbArray[..., 1] = g*255
-    rgbArray[..., 2] = b*255
-    im = Image.fromarray(rgbArray)
-    im.save(tst+'bg_'+str(frame)+'.jpg')
-    return TP, TN, FP, FN
-
-"""
