@@ -49,27 +49,8 @@ def createTmpSequence(frmStart, frmEnd, choiceOfDataset):
         counter += 1
     return
 
-def evaluation2(pred_labels,true_labels,frame,tst):
-    TP = np.sum(np.logical_and(pred_labels == 1, true_labels == 1))
-    # True Negative (TN): we predict a label of 0 (negative), and the true label is 0.
-    TN = np.sum(np.logical_and(pred_labels == 0, true_labels == 0))
-    # False Positive (FP): we predict a label of 1 (positive), but the true label is 0.
-    FP = np.sum(np.logical_and(pred_labels == 1, true_labels == 0))
-    # False Negative (FN): we predict a label of 0 (negative), but the true label is 1.
-    FN = np.sum(np.logical_and(pred_labels == 0, true_labels == 1))
 
-    rgbArray = np.zeros((pred_labels.shape[0],pred_labels.shape[1],3), 'uint8')
-    r=np.logical_and(pred_labels == 1, true_labels == 0).astype(int)
-    g=np.logical_and(pred_labels == 1, true_labels == 1).astype(int)
-    b=np.logical_and(pred_labels == 0, true_labels == 1).astype(int)
-    rgbArray[..., 0] = r*255
-    rgbArray[..., 1] = g*255
-    rgbArray[..., 2] = b*255
-    im = Image.fromarray(rgbArray)
-    im.save(tst+'bg_'+str(frame)+'.jpg')
-    return TP, TN, FP, FN
-
-def task3(choiceOfDataset='fall'):
+def task3(choiceOfDataset='highway', frmStartTr=1050, frmEndTr=1200, frmStartEv=1201, frmEndEv=1350):
 
     # Reset tmp folders
     shutil.rmtree('../datasets/'+choiceOfDataset+'/tmpSequence/')
@@ -79,17 +60,8 @@ def task3(choiceOfDataset='fall'):
     shutil.rmtree('task2Results/FG_evaluation2/')
     os.makedirs('task2Results/FG_evaluation2')
 
-    if choiceOfDataset == 'highway':
-        frmStart = 1050
-        frmEnd = 1200
-    elif choiceOfDataset == 'fall':
-        frmStart = 1460
-        frmEnd = 1510
-    elif choiceOfDataset == 'traffic':
-        frmStart = 950
-        frmEnd = 1000
 
-    createTmpSequence(frmStart, frmEnd, choiceOfDataset)
+    createTmpSequence(frmStartTr, frmEndTr, choiceOfDataset)
     mogBG = cv2.BackgroundSubtractorMOG(history=150, nmixtures=5, backgroundRatio=0.0001)
     mog2BG = cv2.BackgroundSubtractorMOG2(history=150, varThreshold=150, bShadowDetection = False)
 
@@ -97,7 +69,7 @@ def task3(choiceOfDataset='fall'):
     ret, frame = cap.read()
 
 
-    frameCounter = frmStart
+    frameCounter = frmStartTr
     # While we have not reached the end of the sequence
     while frame is not None:
         # Show and write frames
@@ -137,17 +109,7 @@ def task3(choiceOfDataset='fall'):
     shutil.rmtree('../datasets/'+choiceOfDataset+'/tmpSequence/')
     os.makedirs('../datasets/'+choiceOfDataset+'/tmpSequence')
 
-    if choiceOfDataset == 'highway':
-        frmStart = 1200
-        frmEnd = 1350
-    elif choiceOfDataset == 'fall':
-        frmStart = 1510
-        frmEnd = 1560
-    elif choiceOfDataset == 'traffic':
-        frmStart = 1000
-        frmEnd = 1050
-
-    createTmpSequence(frmStart, frmEnd, choiceOfDataset)
+    createTmpSequence(frmStartEv, frmEndEv, choiceOfDataset)
 
     cap = cv2.VideoCapture('../datasets/'+choiceOfDataset+'/tmpSequence/in%03d.jpg')
     _, frame = cap.read()
@@ -184,7 +146,7 @@ def task3(choiceOfDataset='fall'):
     TN_res=0
     FP_res=0
     FN_res=0
-    groundTruthImgs = readGT('../datasets/'+choiceOfDataset+'/groundtruth/', frmStart, frmEnd)
+    groundTruthImgs = readGT('../datasets/'+choiceOfDataset+'/groundtruth/', frmStartEv, frmEndEv)
 
     for idx, img in enumerate(groundTruthImgs):
         pred_labels = allFramesResults[idx]
