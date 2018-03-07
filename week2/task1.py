@@ -5,68 +5,32 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 from utils import *
-
-def task1():
-    inputpath='../datasets/highway/input/'
-    groundTruthPath='../datasets/highway/groundtruth/'
-
-    frmStart=1050
-    frmEnd=1099
-    groundTruthImgs = readGT(groundTruthPath,1050+50,frmEnd+50)
-
-    alpha=0.1
-    alpharecall=[]
-    alphaprec=[]
-    alphaf1=[]
-    alphalst=[]
-    while alpha<=5:
-        print alpha
-        gauss=getGauss(inputpath,1050, 1099)
-        bg=getBG(inputpath,frmStart+50,frmEnd+50,gauss, alpha)
-        TestAmetric = []
-        TestATP = []
-        TestBTP = []
-        TestAFN = []
-        TestBFN = []
-        TestTotalFG=[]
-        TP_fnA=0
-        TN_fnA=0
-        FP_fnA=0
-        FN_fnA=0
+from PIL import Image
+from sklearn import metrics as skmetrics
 
 
-        for idx, img in enumerate(groundTruthImgs):
-            pred_labels = bg[idx,:,:]
-            true_labels=groundTruthImgs[idx,:,:]
-            TP, TN, FP, FN = evaluation(pred_labels,true_labels)
-            TestATP.append(TP)
-            TP_fnA+=TP
-            TN_fnA+=TN
-            FP_fnA+=FP
-            FN_fnA+=FN
-            TestTotalFG.append(TP+FN)
-            TestAmetric.append(metrics(TP, TN, FP, FN))
+def task1(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, grid_search=True, dataset='highway'):
+    print 'TASK1 in process'
 
-        alphaf1.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[2])
-        alpharecall.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[0])
-        alphaprec.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[1])
+    if dataset == 'highway':
+        alpha = 1.8
+    elif dataset == 'fall':
+        alpha = 4.3
+    elif dataset == 'traffic':
+        alpha = 1.8
 
-        alphalst.append(alpha)
-        alpha+=0.1
-    a=np.asarray(TestAmetric)
+    if grid_search:
+        alpha = get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, adaptive=False)[0]
 
-    fig = plt.figure(figsize=(10, 5))
-    #plt.axis([0, len(alphaf1), 0, 1])
-    plt.title('Alpha vs Metrics')
-    plt.plot(alphalst,alphaf1, c='r', label='F1')
-    plt.plot(alphalst,alpharecall, c='b', label='Recall')
-    plt.plot(alphalst,alphaprec, c='g', label='Precision')
-    #plt.plot(b[:,2], c='r', label='Test B')
-    plt.legend(loc='lower right');
-    plt.xlabel('Alpha')
-    plt.ylabel('Metrics')
-    #plt.tight_layout()
-    #plt.show()
-    plt.savefig('F1_2.png')
-    plt.close()
-    pass
+    gauss = getGauss(inputpath, tr_frmStart, tr_frmEnd)
+
+    # Adaptive model
+    bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, adaptive=False)
+
+    TP, TN, FP, FN = added_evaluation(groundTruthImgs, bgad)
+    Recall, Pres, F1 = metrics(TP, TN, FP, FN)
+
+    print dataset + ' dataset with non-adaptive modelling'
+    print 'Recall: ' + str(Recall) + ' - Precision: ' + str(Pres) + ' - F1-score: ' + str(F1)
+    print 'Best alpha: ' + str(alpha)
+    print 'TASK1 finished'
