@@ -225,6 +225,48 @@ def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptiv
     return np.asarray(BGimgs)
 
 
+def getGaussRGB(indir, frmStart, frmEnd, channel=0):
+    ImgNames = os.listdir(indir)
+    ImgNames.sort()
+    im = cv2.cvtColor(cv2.imread(indir + ImgNames[0]), cv2.COLOR_BGR2GRAY)
+    gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1), 'uint8')
+
+    i = 0
+    for idx, name in enumerate(ImgNames):
+        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
+            # im=cv2.cvtColor(cv2.imread(indir+name), cv2.COLOR_BGR2HSV)
+            im = cv2.imread(indir + name)
+            im = cv2.split(im)
+            im = im[channel]
+            gauss[..., i] = im
+            i += 1
+    return gauss.mean(axis=2), gauss.std(axis=2)
+
+
+def getBGRGB(indir, frmStart, frmEnd, gauss, channel=0, alpha=1, rho=0.1, outdir=None, adaptive=False):
+    ImgNames = os.listdir(indir)
+    ImgNames.sort()
+    BGimgs = []
+    for idx, name in enumerate(ImgNames):
+        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
+            im = cv2.imread(indir + name)
+            im = cv2.split(im)
+            im = im[channel]
+            bg = (abs(im - gauss[0]) >= alpha * (gauss[1] + 2)).astype(int)
+
+            if adaptive:
+                gmean = rho*im + (1-rho)*gauss[0]
+                gvar = (rho*(im-gmean))**2 + (1-rho)*gausss[1]
+                gauss[0][bg == 0] = gmean[bg == 0]
+                gauss[1][bg == 0] = gvar[bg == 0]
+
+            BGimgs.append(bg)
+            if outdir is not None:
+                im = Image.fromarray((bg * 255).astype('uint8'))
+                im.save(outdir + name)
+    return np.asarray(BGimgs)
+
+
 def annot_max(x, y, ax=None):
     xmax = x[np.argmax(y)]
     ymax = y.max()
@@ -256,7 +298,7 @@ def added_evaluation(groundTruthImgs, bgad):
     return TP_fnA, TN_fnA, FP_fnA, FN_fnA
 
 
-def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset, show_plt=False, adaptive=True):
+def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset, show_plt=False, adaptive=True, dimension=1):
     alpha_start = 0.1
     rho_start = 0.
     maxa = 5
@@ -292,10 +334,20 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
         while rho <= maxr:
             print alpha, rho
 
-            gauss = getGauss(inputpath, tr_frmStart, tr_frmEnd)
+            if dimension == 1:
+                gauss = getGauss(inputpath, tr_frmStart, tr_frmEnd)
 
-            # Adaptive model
-            bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, rho, adaptive=adaptive)
+                # Adaptive model
+                bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, rho, adaptive=adaptive)
+
+            else:
+                gauss0 = getGaussRGB(inputpath, frmStart, frmEnd, 0)
+                bg0 = getBGRGB(inputpath, frmStart + step, frmEnd + step, gauss0, 0, alpha)
+                gauss1 = getGaussRGB(inputpath, frmStart, frmEnd, 1)
+                bg1 = getBGRGB(inputpath, frmStart + step, frmEnd + step, gauss1, 1, alpha)
+                gauss2 = getGaussRGB(inputpath, frmStart, frmEnd, 2)
+                bg2 = getBGRGB(inputpath, frmStart + step, frmEnd + step, gauss2, 2, alpha)
+                bgad = bg0*bg1*bg2
 
             # Adaptative variables
             TP_fnA, TN_fnA, FP_fnA, FN_fnA = added_evaluation(groundTruthImgs, bgad)
@@ -334,6 +386,7 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
 
     if adaptive:
         rho = up * (f1_coord[1] + 1)
+
         plt.figure(figsize=(10, 10))
         plt.title('Alpha vs Rho vs f1 (adaptive) - Dataset: ' + dataset)
         plt.imshow(f1_mat, extent=[rho_start, maxr, alpha_start, maxa])
@@ -347,8 +400,8 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
         if show_plt:
             plt.show()
             plt.close()
-
         plt.savefig('F1_2ad_' + dataset + '.png')
+
     else:
         title = dataset + ' DS frms ' + str(te_frmStart) + '-' + str(te_frmEnd) + ' - $\\alpha$ [0.1-10.0] '
         roc(recall, prec, title, show_plt, dataset)
