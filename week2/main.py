@@ -40,7 +40,6 @@ groundTruthImgs = readGT(groundTruthPath, te_frmStart, te_frmEnd)
 #########
 
 # Gaussian distribution + evaluation
-print 'aca'
 task1(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, grid_search=True)
 
 
