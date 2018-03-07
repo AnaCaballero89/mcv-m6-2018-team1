@@ -270,6 +270,8 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
         maxr = 1
         indr = 0
         f1_mat = np.zeros((int(maxa / up), int(maxr / up)))
+        pre_mat = np.zeros((int(maxa / up), int(maxr / up)))
+        rec_mat = np.zeros((int(maxa / up), int(maxr / up)))
 
     else:
         TestATP = []
@@ -298,6 +300,8 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
             TP_fnA, TN_fnA, FP_fnA, FN_fnA = added_evaluation(groundTruthImgs, bgad)
             f1.append(metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[2])
 
+            pre_mat[inda, indr] = metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[1]
+            rec_mat[inda, indr] = metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[0]
             f1_mat[inda, indr] = metrics(TP_fnA, TN_fnA, FP_fnA, FN_fnA)[2]
 
             rho += up
@@ -324,9 +328,20 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
 
     alpha = up * (f1_coord[0] + 1)
 
-
     if adaptive:
         rho = up * (f1_coord[1] + 1)
+
+        reclist = rec_mat[f1_coord[0], :]
+        preclist = pre_mat[f1_coord[0], :]
+
+        title = dataset + ' DS frms ' + str(te_frmStart) + '-' + str(te_frmEnd) + ' - $\\alpha$ [0.1-10.0] - for fix Alpha'
+        roc(reclist, preclist, title, show_plt, dataset)
+
+        reclist = rec_mat[:, f1_coord[1]]
+        preclist = pre_mat[:, f1_coord[1]]
+
+        title = dataset + ' DS frms ' + str(te_frmStart) + '-' + str(te_frmEnd) + ' - $\\alpha$ [0.1-10.0] - for fix Rho'
+        roc(reclist, preclist, title, show_plt, dataset)
 
         plt.figure(figsize=(10, 10))
         plt.title('Alpha vs Rho vs f1 (adaptive) - Dataset: ' + dataset)
@@ -345,7 +360,7 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
         plt.savefig('F1_2ad_' + dataset + '.png')
     else:
         title = dataset + ' DS frms ' + str(te_frmStart) + '-' + str(te_frmEnd) + ' - $\\alpha$ [0.1-10.0] '
-        roc(recall, prec, title, show_plt,dataset)
+        roc(recall, prec, title, show_plt, dataset)
 
         alphalst = np.arange(alpha_start, maxa+up, up)
         fig, ax = plt.subplots()
