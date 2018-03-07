@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 from PIL import Image
+from sklearn import metrics as skmetrics
 
 
 def evaluation(pred_labels, true_labels):
@@ -247,7 +248,7 @@ def added_evaluation(groundTruthImgs, bgad):
     return TP_fnA, TN_fnA, FP_fnA, FN_fnA
 
 
-def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, show_plt=False, adaptive=True):
+def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset, show_plt=False, adaptive=True):
     alpha_start = 0.1
     rho_start = 0.
     maxa = 5
@@ -317,21 +318,24 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
         rho = up * (x[1] + 1)
 
         plt.figure(figsize=(10, 5))
-        plt.title('Alpha vs Rho vs f1 (adaptive)')
+        plt.title('Alpha vs Rho vs f1 (adaptive) - Dataset: ' + dataset)
         plt.imshow(f1_mat, extent=[rho_start, maxr, alpha_start, maxa])
         plt.scatter(rho, alpha)
         plt.xlabel('Rho')
         plt.ylabel('Alpha')
         axes = plt.gca()
-        axes.set_xlim([0.1, 1])
-        axes.set_ylim([0.1, 5])
+        axes.set_xlim([rho_start, maxr])
+        axes.set_ylim([alpha_start, maxa])
         if show_plt:
             plt.show()
             plt.close()
-        else:
-            plt.savefig('F1_2ad.png')
+
+        plt.savefig('F1_2ad_' + dataset + '.png')
     else:
-        alphalst = np.arange(alpha_start, maxa+0.1, up)
+        title = dataset + ' DS frms ' + str(te_frmStart) + '-' + str(te_frmEnd) + ' - $\\alpha$ [0.1-10.0] '
+        roc(recall, prec, title, show_plt,dataset)
+
+        alphalst = np.arange(alpha_start, maxa+up, up)
         fig, ax = plt.subplots()
         ax.plot(alphalst, TestATP, c='g', label='TP')
         ax.plot(alphalst,TestAFN, c='b', label='FN')
@@ -344,19 +348,60 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
         plt.axis([0, maxa, 0, 1])
         ax.xaxis.set_ticks(np.arange(0, maxa, 1))
         ax.yaxis.set_ticks(np.arange(0, 1.01, 0.1))
-        plt.title('Alpha vs f1 (non-adaptive)')
+        plt.title('Alpha vs f1 (non-adaptive) - Dataset: ' + dataset)
         plt.plot(alphalst, f1, c='r', label='F1')
         plt.plot(alphalst, recall, c='b', label='Recall')
         plt.plot(alphalst, prec, c='g', label='Precision')
         plt.legend(loc='lower right')
         plt.xlabel('$\\alpha$')
         plt.ylabel('Metrics')
-        # plt.tight_layout()
-        plt.show()
         annot_max(np.asarray(alphalst), np.asarray(f1))
-        plt.close()
+
+        if show_plt:
+            plt.show()
+            plt.close()
+
+        plt.savefig('F1_2_' + dataset + '.png')
 
     return alpha, rho
+
+
+def roc(recall_lst, precision_lst, title='', show_plt=False, dataset='highway'):
+    recall = np.asarray(recall_lst)
+    precision = np.asarray(precision_lst)
+    precision2 = precision.copy()
+    i = recall.shape[0] - 2
+
+    # interpolation...
+    while i >= 0:
+        if precision[i + 1] > precision[i]:
+            precision[i] = precision[i + 1]
+        i = i - 1
+
+    # plotting...
+    fig, ax = plt.subplots()
+    ax.plot(recall, precision2, 'k--', color='blue')
+    ax.set_xlabel("recall")
+    ax.set_ylabel("precision")
+
+    precision, recall = precision_lst, recall_lst
+    skmetrics.auc(precision, recall)
+    plt.step(recall, precision, color='b', alpha=0.1,
+             where='post')
+    plt.fill_between(recall, precision, step='post', alpha=0.1,
+                     color='b')
+
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.ylim([0.0, 1.0])
+    plt.xlim([min(recall_lst), 1.0])
+    print skmetrics.auc(precision, recall)
+    plt.title(title + 'AUC={0:0.2f}'.format(skmetrics.auc(precision, recall)))
+
+    if show_plt:
+        fig.show()
+
+    plt.savefig('ROC_' + dataset + '.png')
 
 
 """
