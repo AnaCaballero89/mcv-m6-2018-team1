@@ -182,28 +182,19 @@ def getGauss(indir, frmStart, frmEnd, dimension=1):
     ImgNames = os.listdir(indir)
     ImgNames.sort()
     im = cv2.cvtColor(cv2.imread(indir + ImgNames[0]), cv2.COLOR_BGR2GRAY)
-    mean = []
-    var = []
-    for dim in range(0, dimension):
-        i = 0
-        gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1), 'uint8')
-        for idx, name in enumerate(ImgNames):
-            if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
-                im = cv2.imread(indir + name)
-                if dimension == 1:
-                    im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
-                    gauss[..., i] = im
-                else:
-                    gauss[..., i] = im[:, :, dim]
 
-                i += 1
+    i = 0
+    gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1))
+    for idx, name in enumerate(ImgNames):
+        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
+            im = cv2.imread(indir + name)
+            #if dimension == 1:
+            im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+            gauss[..., i] = im
+            mean = gauss.mean(axis=2)
+            var = gauss.var(axis=2)
 
-        mean.append(gauss.mean(axis=2))
-        var.append(gauss.var(axis=2))
-
-    if dimension == 1:
-        mean = np.asanyarray(mean[0])
-        var = np.asanyarray(var[0])
+            i += 1
 
     return mean, var
 
@@ -216,12 +207,8 @@ def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptiv
         if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
 
             im = cv2.imread(indir + name)
-            if dimension == 1:
-                im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
-
-            bg = np.ones((im.shape[0], im.shape[1], frmEnd - frmStart + 1), 'uint8')
-            for dim in range(0,dimension):
-                bg = (abs(im[:, :, dim] - gauss[0]) >= alpha * (gauss[1] + 2)).astype(int)
+            im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+            bg = (abs(im - gauss[0]) >= alpha * (np.sqrt(gauss[1]) + 2)).astype(int)
 
             if adaptive:
                 gmean = rho*im + (1-rho)*gauss[0]
