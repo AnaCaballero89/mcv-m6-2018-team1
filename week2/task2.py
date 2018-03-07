@@ -8,13 +8,13 @@ def task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_fr
     print 'TASK2 in process'
 
     if dataset == 'highway':
-        alpha = 3.
-        rho = .3
+        alpha = 4.6
+        rho = .2
     elif dataset == 'fall':
-        alpha = 3.5
+        alpha = 5.
         rho = .1
     elif dataset == 'traffic':
-        alpha = 2.9
+        alpha = 5.
         rho = .2
 
     if grid_search:
@@ -23,7 +23,7 @@ def task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_fr
     gauss = getGauss(inputpath, tr_frmStart, tr_frmEnd, dimension=dimension)
 
     # Adaptive model
-    bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, rho, adaptive=True, dimension=dimension)
+    bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, rho, adaptive=True, dimension=dimension, outdir='bgImages/'+dataset+'/')
 
     TP, TN, FP, FN = added_evaluation(groundTruthImgs, bgad)
     Recall, Pres, F1 = metrics(TP, TN, FP, FN)
