@@ -314,11 +314,11 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
     alpha = up * (x[0] + 1)
 
     if adaptive:
-        rho = up * (x[0] + 1)
+        rho = up * (x[1] + 1)
 
         plt.figure(figsize=(10, 5))
         plt.title('Alpha vs Rho vs f1 (adaptive)')
-        plt.imshow(f1_mat, extent=[0.1, 1, 0.1, 5])
+        plt.imshow(f1_mat, extent=[rho_start, maxr, alpha_start, maxa])
         plt.scatter(rho, alpha)
         plt.xlabel('Rho')
         plt.ylabel('Alpha')
@@ -333,10 +333,14 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
     else:
         alphalst = np.arange(alpha_start, maxa+0.1, up)
         fig, ax = plt.subplots()
-        # ax.stackplot(alphalst, TestATP, TestATN, TestAFP, TestAFN)
-        # plt.show()
-        # plt.close()
+        ax.plot(alphalst, TestATP, c='g', label='TP')
+        ax.plot(alphalst,TestAFN, c='b', label='FN')
+        ax.plot(alphalst,TestAFP, c='r', label='FP')
+        ax.plot(alphalst,TestATN, c='black', label='TN')
+        plt.show()
+        plt.close()
 
+        fig, ax = plt.subplots()
         plt.axis([0, maxa, 0, 1])
         ax.xaxis.set_ticks(np.arange(0, maxa, 1))
         ax.yaxis.set_ticks(np.arange(0, 1.01, 0.1))
