@@ -1,0 +1,26 @@
+MOG
+- highway
+ Recall 		 Precision 		 F1
+ 0.531 			 0.914 			 0.672
+ 
+- fall
+ Recall 		 Precision 		 F1
+ 0.585 			 0.641 			 0.611
+ 
+- traffic
+ Recall 		 Precision 		 F1
+ 0.809 			 0.540 			 0.648
+
+
+MOG2
+- highway
+ Recall 		 Precision 		 F1
+ 0.390 			 0.900 			 0.544
+ 
+- fall
+ Recall 		 Precision 		 F1
+ 0.639 			 0.671 			 0.654
+ 
+- traffic
+ Recall 		 Precision 		 F1
+ 0.735 			 0.612 			 0.668
