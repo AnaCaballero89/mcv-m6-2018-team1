@@ -56,7 +56,7 @@ task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd
 #########
 
 # Comparison with state-of-the-art
-task3()
+task3(dataset)
 
 
 #########

@@ -69,8 +69,7 @@ def evaluation2(pred_labels,true_labels,frame,tst):
     im.save(tst+'bg_'+str(frame)+'.jpg')
     return TP, TN, FP, FN
 
-def task3():
-    choiceOfDataset = 'fall'     # Possible options: 'highway', 'fall' and 'traffic'
+def task3(choiceOfDataset='fall'):
 
     # Reset tmp folders
     shutil.rmtree('../datasets/'+choiceOfDataset+'/tmpSequence/')
