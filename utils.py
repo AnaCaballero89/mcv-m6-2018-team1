@@ -5,6 +5,7 @@ import os
 from PIL import Image
 from sklearn import metrics as skmetrics
 import pickle
+import shutil
 
 
 def evaluation(pred_labels, true_labels):
@@ -438,8 +439,8 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
 
 
 def roc(recall_lst, precision_lst, title='', show_plt=False, dataset='highway'):
-    recall = np.asarray(recall_lst)
-    precision = np.asarray(precision_lst)
+    recall = np.asarray(recall_lst+[1.0])
+    precision = np.asarray(precision_lst+[0.0])
     precision2 = precision.copy()
     i = recall.shape[0] - 2
 
@@ -456,7 +457,7 @@ def roc(recall_lst, precision_lst, title='', show_plt=False, dataset='highway'):
     ax.set_ylabel("precision")
 
     precision, recall = precision_lst, recall_lst
-    skmetrics.auc(precision, recall)
+    skmetrics.auc(precision, recall, reorder=True)
     plt.step(recall, precision, color='b', alpha=0.1,
              where='post')
     plt.fill_between(recall, precision, step='post', alpha=0.1,
@@ -466,10 +467,36 @@ def roc(recall_lst, precision_lst, title='', show_plt=False, dataset='highway'):
     plt.ylabel('Precision')
     plt.ylim([0.0, 1.0])
     plt.xlim([min(recall_lst), 1.0])
-    print skmetrics.auc(precision, recall)
-    plt.title(title + 'AUC={0:0.2f}'.format(skmetrics.auc(precision, recall)))
+    print skmetrics.auc(precision, recall, reorder=True)
+    plt.title(title + 'AUC={0:0.2f}'.format(skmetrics.auc(precision, recall, reorder=True)))
 
     if show_plt:
         fig.show()
 
     plt.savefig('ROC_' + dataset + '.png')
+
+
+def createTmpSequence(frmStart, frmEnd, choiceOfDataset):
+
+    # Copy files
+    for frameCounter in range(frmStart, frmEnd+1):
+        if choiceOfDataset == 'traffic' and frameCounter < 1000:
+            shutil.copy('../datasets/'+choiceOfDataset+'/input/in000'+str(frameCounter)+'.jpg', '../datasets/'+choiceOfDataset+'/tmpSequence')
+        else:
+            shutil.copy('../datasets/'+choiceOfDataset+'/input/in00'+str(frameCounter)+'.jpg', '../datasets/'+choiceOfDataset+'/tmpSequence')
+
+    # Rename files
+    counter = 0
+    filenames = os.listdir("../datasets/"+choiceOfDataset+"/tmpSequence/")
+    filenames.sort()
+    for filename in filenames:
+        filename = '../datasets/'+choiceOfDataset+'/tmpSequence/'+filename
+        # print filename
+        if counter < 10:
+            os.rename(filename, '../datasets/'+choiceOfDataset+'/tmpSequence/in00'+str(counter)+'.jpg')
+        elif counter < 100:
+            os.rename(filename, '../datasets/'+choiceOfDataset+'/tmpSequence/in0'+str(counter)+'.jpg')
+        else:
+            os.rename(filename, '../datasets/'+choiceOfDataset+'/tmpSequence/in'+str(counter)+'.jpg')
+        counter += 1
+    return
