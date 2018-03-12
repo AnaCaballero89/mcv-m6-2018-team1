@@ -54,6 +54,23 @@ def readGT(groundTruthPath, frmStart=1201, frmEnd=1400):
     groundTruthImgs = np.asarray(groundTruthImgs)
     return groundTruthImgs
 
+def arfilt(im, connectivity, area_thresh=1):
+    
+    output = cv2.connectedComponentsWithStats(im, connectivity, cv2.CV_32S)
+    # The first cell is the number of labels
+    num_labels = output[0]
+    # The second cell is the label matrix
+    labels = output[1]
+    # The third cell is the stat matrix
+    stats = output[2]
+    stats[0,cv2.CC_STAT_AREA]=0 # forcing background area to be 0
+    fil_img=(stats[labels,cv2.CC_STAT_AREA]>area_thresh).astype(int)
+
+    #for x in labels:
+    #    print stats[x,cv2.CC_STAT_AREA]
+    # The fourth cell is the centroid matrix
+    centroids = output[3]
+    return fil_img
 
 def plotF1(a, b, fl=True):
     fig = plt.figure(figsize=(10, 5))
