@@ -106,9 +106,37 @@ Every week's submission will be placed in a different folder called 'weekX', whe
 - [X] Update your implementation to support color sequences
 
 
+## Week 3:
 
 
+### Task 1: Hole filling
 
+- [X] Post-process Week2 with hole filling
+    - Report with the AUC & gain for each of the three video sequences
+
+### Task 2: Area Filtering
+
+- [X] Plot a graph of AUC vs pixels for each sequence and discuss some qualitative examples.
+
+- [X] Post-process the best configuration from Task 1, find the P with highest mean AUC for each sequence and discuss qualitative results
+
+### Task 3: Additional morphological processings
+
+- [X] Explore with other morphological filters and combinations to improve AUC for foreground pixels.
+
+    - Closing
+    - Opening
+    - Dilation
+    - Erosion
+    - Different structural elements...
+
+### Task 4: Shadow removal
+- [X] Search for existing techniques, run/implement at least one and assess its performance
+
+### Task 5: Evaluation
+- [X] Summarize which is your best configuration and show it improves the performance from previous week:
+    - Compare the precision / recall curves
+    - Update the AUC & compute the gain.
 
 
 
