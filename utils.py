@@ -478,8 +478,8 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
 
 
 def roc(recall_lst, precision_lst, title='', show_plt=False, dataset='highway'):
-    recall = np.asarray(recall_lst+[1.0])
-    precision = np.asarray(precision_lst+[0.0])
+    recall = np.asarray(recall_lst)
+    precision = np.asarray(precision_lst)
     precision2 = precision.copy()
     i = recall.shape[0] - 2
 
@@ -506,8 +506,8 @@ def roc(recall_lst, precision_lst, title='', show_plt=False, dataset='highway'):
     plt.ylabel('Precision')
     plt.ylim([0.0, 1.0])
     plt.xlim([min(recall_lst), 1.0])
-    print skmetrics.auc(precision, recall, reorder=True)
-    plt.title(title + 'AUC={0:0.2f}'.format(skmetrics.auc(precision, recall, reorder=True)))
+    print skmetrics.auc(recall, precision, reorder=True)
+    plt.title(title + 'AUC={0:0.2f}'.format(skmetrics.auc(recall, precision, reorder=True)))
 
     if show_plt:
         fig.show()
