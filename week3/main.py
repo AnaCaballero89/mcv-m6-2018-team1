@@ -41,9 +41,10 @@ else:
     print "You haven't defined the right dataset. Options are: highway, fall or traffic."
     exit(0)
 
-
-mog2BG = cv2.BackgroundSubtractorMOG2(history=150, varThreshold=MOGthreshold, bShadowDetection = False)
-
+try:
+    mog2BG = cv2.BackgroundSubtractorMOG2(history=150, varThreshold=MOGthreshold, bShadowDetection = False)
+except:
+    mog2BG = cv2.createBackgroundSubtractorMOG2(history=150, varThreshold=MOGthreshold)
 groundTruthImgs = readGT(groundTruthPath, te_frmStart, te_frmEnd)
 
 #########
@@ -59,7 +60,42 @@ task1(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, t
 #########
 
 # Area filtering
-task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset)
+precLst=[]
+recLst=[]
+f1Lst=[]
+treshLst=[]
+AUC_lst=[]
+arthreshLst=[]
+conn,arthresh=4,0
+while arthresh<=1000:
+    varThreshold=0
+    while varThreshold<2000:
+        try:
+            mog2BG = cv2.BackgroundSubtractorMOG2(150, varThreshold, bShadowDetection = False)
+        except:
+            mog2BG = cv2.createBackgroundSubtractorMOG2(150, varThreshold)
+        groundTruthImgs = readGT(groundTruthPath, te_frmStart, te_frmEnd)
+        
+        #########
+        # Task1 #
+        #########
+        
+        # Hole filling
+        recall, prec, f1=task2(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset,conn,arthresh)
+        precLst.append(prec)
+        recLst.append(recall)
+        f1Lst.append(f1)
+        treshLst.append(treshLst)
+        if recall<=0.01:
+            break
+        print varThreshold
+        varThreshold+=100
+    AUC0=skmetrics.auc(recLst, precLst, reorder=True)
+    print 'AUC=', AUC0
+    arthreshLst.append(arthresh)
+    AUC_lst.append(AUC0)
+    arthresh+=100
+print AUC_lst
 
 
 #########
