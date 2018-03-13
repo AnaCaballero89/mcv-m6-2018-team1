@@ -23,7 +23,10 @@ def task3(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
     # os.makedirs('task3Results/FG_evaluation')
 
     createTmpSequence(tr_frmStart, tr_frmEnd, choiceOfDataset)
-    mog2BG = cv2.BackgroundSubtractorMOG2(history=150, varThreshold=MOGthreshold, bShadowDetection = False)
+    if "2" in cv2.__version__:
+        mog2BG = cv2.BackgroundSubtractorMOG2(history=150, varThreshold=MOGthreshold, bShadowDetection = False)
+    else:
+        mog2BG = cv2.createBackgroundSubtractorMOG2(history=150, varThreshold=MOGthreshold, detectShadows=False)
     #mog2BG = cv2.createB
     # Start reading the sequence
     cap = cv2.VideoCapture('../datasets/'+choiceOfDataset+'/tmpSequence/in%03d.jpg')

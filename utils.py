@@ -20,6 +20,18 @@ def evaluation(pred_labels, true_labels):
     return TP, TN, FP, FN
 
 
+def evaluationShadows(pred_labels, true_labels):
+    TP = np.sum(np.logical_and(pred_labels == 255, true_labels == 255)) + np.sum(np.logical_and(pred_labels == 50, true_labels == 50))
+
+    TN = np.sum(np.logical_and(pred_labels == 0, true_labels == 0))
+
+    FP = np.sum(np.logical_and(pred_labels == 255, true_labels == 0)) + np.sum(np.logical_and(pred_labels == 50, true_labels == 0))
+
+    FN = np.sum(np.logical_and(pred_labels == 0, true_labels == 255)) + np.sum(np.logical_and(pred_labels == 0, true_labels == 50))
+
+    return TP, TN, FP, FN
+
+
 def metrics(TP, TN, FP, FN):
     Pres=float(TP)/(TP+FP+1e-10)
     Recall=float(TP)/(TP+FN+1e-10)
@@ -53,8 +65,10 @@ def readGT(groundTruthPath, frmStart=1201, frmEnd=1400, shadow=False):
             if not shadow:
                 im = cv2.threshold(cv2.cvtColor(cv2.imread(groundTruthPath+name), cv2.COLOR_BGR2GRAY), 169, 1, cv2.THRESH_BINARY)[1]
             else:
-                im = cv2.cvtColor(cv2.imread(groundTruthPath + name), cv2.COLOR_BGR2GRAY)[1]
-            groundTruthImgs.append(im)
+                im = cv2.cvtColor(cv2.imread(groundTruthPath + name), cv2.COLOR_BGR2GRAY)
+                im[im == 170] = 255
+
+            groundTruthImgs.append(np.float64(im))
     groundTruthImgs = np.asarray(groundTruthImgs)
     return groundTruthImgs
 
@@ -325,7 +339,7 @@ def annot_max(x, y, ax=None):
     ax.annotate(text, xy=(xmax, ymax), xytext=(0.7, ymax + 0.2), **kw)
 
 
-def added_evaluation(groundTruthImgs, bgad):
+def added_evaluation(groundTruthImgs, bgad, shadow=False):
     TP_fnA = 0
     TN_fnA = 0
     FP_fnA = 0
@@ -334,7 +348,10 @@ def added_evaluation(groundTruthImgs, bgad):
     for idx, img in enumerate(groundTruthImgs):
         pred_labels = bgad[idx, :, :]
         true_labels = groundTruthImgs[idx, :, :]
-        TP, TN, FP, FN = evaluation(pred_labels, true_labels)
+        if not shadow:
+            TP, TN, FP, FN = evaluation(pred_labels, true_labels)
+        else:
+            TP, TN, FP, FN = evaluationShadows(pred_labels, true_labels)
         TP_fnA += TP
         TN_fnA += TN
         FP_fnA += FP

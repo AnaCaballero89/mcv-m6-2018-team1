@@ -27,6 +27,9 @@ def task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_fr
         bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, rho, adaptive=True)
 
     else:
+        gauss = getGauss(inputpath, tr_frmStart, tr_frmEnd, dimension=dimension)
+        bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, rho, adaptive=True, dimension=dimension)
+        """
         gauss0 = getGaussRGB(inputpath, tr_frmStart, tr_frmEnd, 0)
         bg0 = getBGRGB(inputpath, te_frmStart, te_frmEnd, gauss0, 0, alpha)
         gauss1 = getGaussRGB(inputpath, tr_frmStart, tr_frmEnd, 1)
@@ -34,6 +37,7 @@ def task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_fr
         gauss2 = getGaussRGB(inputpath, tr_frmStart, tr_frmEnd, 2)
         bg2 = getBGRGB(inputpath, te_frmStart, te_frmEnd, gauss2, 2, alpha)
         bgad = bg0 * bg1 * bg2
+        """
     TP, TN, FP, FN = added_evaluation(groundTruthImgs, bgad)
     Recall, Pres, F1 = metrics(TP, TN, FP, FN)
 
@@ -42,3 +46,4 @@ def task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_fr
     print 'Best alpha: ' + str(alpha)
     print 'Best rho: ' + str(rho)
     print 'TASK2 finished'
+

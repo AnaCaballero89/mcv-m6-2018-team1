@@ -16,7 +16,10 @@ def task1(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
     precisionList = []
     for threshold in range(10,2000,100):
         print "Threshold: ",threshold
-        mog2BG = cv2.BackgroundSubtractorMOG2(history=150, varThreshold=threshold, bShadowDetection = False)
+        if "2" in cv2.__version__:
+            mog2BG = cv2.BackgroundSubtractorMOG2(history=150, varThreshold=MOGthreshold, bShadowDetection=False)
+        else:
+            mog2BG = cv2.createBackgroundSubtractorMOG2(history=150, varThreshold=MOGthreshold, detectShadows=False)
         # Reset tmp folders
         if 'tmpSequence' in os.listdir('../datasets/'+choiceOfDataset):
             shutil.rmtree('../datasets/'+choiceOfDataset+'/tmpSequence/')
