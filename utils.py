@@ -44,16 +44,20 @@ def readTest(abSequencePath):
     return AImgs, BImgs
 
 
-def readGT(groundTruthPath, frmStart=1201, frmEnd=1400):
+def readGT(groundTruthPath, frmStart=1201, frmEnd=1400, shadow=False):
     groundTruthImgNames = os.listdir(groundTruthPath)
     groundTruthImgNames.sort()
     groundTruthImgs = []
     for name in groundTruthImgNames:
         if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
-            im = cv2.threshold(cv2.cvtColor(cv2.imread(groundTruthPath+name), cv2.COLOR_BGR2GRAY), 169, 1, cv2.THRESH_BINARY)[1]
+            if not shadow:
+                im = cv2.threshold(cv2.cvtColor(cv2.imread(groundTruthPath+name), cv2.COLOR_BGR2GRAY), 169, 1, cv2.THRESH_BINARY)[1]
+            else:
+                im = cv2.cvtColor(cv2.imread(groundTruthPath + name), cv2.COLOR_BGR2GRAY)[1]
             groundTruthImgs.append(im)
     groundTruthImgs = np.asarray(groundTruthImgs)
     return groundTruthImgs
+
 
 def arfilt(im, connect=4, area_thresh=1):
     im=(im>0).astype(int)
@@ -64,6 +68,7 @@ def arfilt(im, connect=4, area_thresh=1):
         area[prop.label]=prop.area
     fil_img=(area[labeled,0]>area_thresh).astype(int)
     return fil_img
+
 
 def plotF1(a, b, fl=True):
     fig = plt.figure(figsize=(10, 5))
@@ -195,43 +200,71 @@ def getGauss(indir, frmStart, frmEnd, dimension=1):
     ImgNames.sort()
     im = cv2.cvtColor(cv2.imread(indir + ImgNames[0]), cv2.COLOR_BGR2GRAY)
 
+    if dimension == 1:
+        gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1))
+    else:
+        gaussR = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1))
+        gaussG = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1))
+        gaussB = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1))
+
     i = 0
-    gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1))
     for idx, name in enumerate(ImgNames):
-        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
-            im = cv2.imread(indir + name)
-            #if dimension == 1:
-            im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
-            gauss[..., i] = im
-            #mean = gauss.mean(axis=2)
-            #var = gauss.var(axis=2)
+        if name.endswith('.png') or name.endswith('.jpg') or name.endswith('.jpeg'):
+            if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
 
-            i += 1
+                if dimension == 1:
+                    im = cv2.cvtColor(cv2.imread(indir + name), cv2.COLOR_BGR2GRAY)
+                    gauss[..., i] = im
+                else:
+                    im = cv2.imread(indir + name)
+                    im = cv2.split(im)
+                    gaussR[..., i] = im[0]
+                    gaussG[..., i] = im[1]
+                    gaussB[..., i] = im[2]
 
-    return gauss.mean(axis=2), gauss.var(axis=2)
+                i += 1
+
+    if dimension == 1:
+        mean = gauss.mean(axis=2)
+        var = gauss.var(axis=2)
+    else:
+        mean = np.stack((gaussR.mean(axis=2), gaussG.mean(axis=2), gaussB.mean(axis=2)), axis=2)
+        var = np.stack((gaussR.var(axis=2), gaussG.var(axis=2), gaussB.var(axis=2)), axis=2)
+
+    return mean, var
 
 
-def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptive=False, dimension=1):
+def getBG(indir, frmStart, frmEnd, gauss, alpha=1, rho=0.1, outdir=None, adaptive=False, dimension=1, shadow=False):
     ImgNames = os.listdir(indir)
     ImgNames.sort()
     BGimgs = []
     for idx, name in enumerate(ImgNames):
-        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
+        if name.endswith('.png') or name.endswith('.jpg') or name.endswith('.jpeg'):
+            if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
 
-            #im = cv2.imread(indir + name)
-            im = cv2.cvtColor(cv2.imread(indir + name), cv2.COLOR_BGR2GRAY)
-            bg = (abs(im - gauss[0]) >= alpha * (np.sqrt(gauss[1]) + 2)).astype(int)
+                if dimension == 1:
+                    im = cv2.cvtColor(cv2.imread(indir + name), cv2.COLOR_BGR2GRAY)
+                    bg = (abs(im - gauss[0]) >= alpha * (np.sqrt(gauss[1]) + 2)).astype(int)
 
-            if adaptive:
-                gmean = rho*im + (1-rho)*gauss[0]
-                gvar = (rho*(im-gmean))**2 + (1-rho)*gauss[1]
-                gauss[0][bg == 0] = gmean[bg == 0]
-                gauss[1][bg == 0] = gvar[bg == 0]
+                else:
+                    im = cv2.imread(indir + name)
+                    bg = (abs(im - gauss[0]) >= alpha * (np.sqrt(gauss[1]) + 2)).astype(int)
+                    bg = np.logical_and(bg[..., 0], bg[..., 1], bg[..., 2])
 
-            BGimgs.append(bg)
-            if outdir is not None:
-                im = Image.fromarray((bg * 255).astype('uint8'))
-                im.save(outdir + name)
+                    if shadow:
+                        im = cv2.split(im)
+                        a_shadow = 1
+
+                if adaptive:
+                    gmean = rho*im + (1-rho)*gauss[0]
+                    gvar = (rho*(im-gmean))**2 + (1-rho)*gauss[1]
+                    gauss[0][bg == 0] = gmean[bg == 0]
+                    gauss[1][bg == 0] = gvar[bg == 0]
+
+                BGimgs.append(bg)
+                if outdir is not None:
+                    im = Image.fromarray((bg * 255).astype('uint8'))
+                    im.save(outdir + name)
 
     return np.asarray(BGimgs)
 
@@ -240,7 +273,7 @@ def getGaussRGB(indir, frmStart, frmEnd, channel=0):
     ImgNames = os.listdir(indir)
     ImgNames.sort()
     im = cv2.cvtColor(cv2.imread(indir + ImgNames[0]), cv2.COLOR_BGR2GRAY)
-    gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1), 'uint8')
+    gauss = np.zeros((im.shape[0], im.shape[1], frmEnd - frmStart + 1))
 
     i = 0
     for idx, name in enumerate(ImgNames):
@@ -259,22 +292,23 @@ def getBGRGB(indir, frmStart, frmEnd, gauss, channel=0, alpha=1, rho=0.1, outdir
     ImgNames.sort()
     BGimgs = []
     for idx, name in enumerate(ImgNames):
-        if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
-            im = cv2.imread(indir + name)
-            im = cv2.split(im)
-            im = im[channel]
-            bg = (abs(im - gauss[0]) >= alpha * (gauss[1] + 2)).astype(int)
+        if name.endswith('.png') or name.endswith('.jpg') or name.endswith('.jpeg'):
+            if int(name[-8:-4]) >= frmStart and int(name[-8:-4]) <= frmEnd:
+                im = cv2.imread(indir + name)
+                im = cv2.split(im)
+                im = im[channel]
+                bg = (abs(im - gauss[0]) >= alpha * (gauss[1] + 2)).astype(int)
 
-            if adaptive:
-                gmean = rho*im + (1-rho)*gauss[0]
-                gvar = (rho*(im-gmean))**2 + (1-rho)*gausss[1]
-                gauss[0][bg == 0] = gmean[bg == 0]
-                gauss[1][bg == 0] = gvar[bg == 0]
+                if adaptive:
+                    gmean = rho*im + (1-rho)*gauss[0]
+                    gvar = (rho*(im-gmean))**2 + (1-rho)*gausss[1]
+                    gauss[0][bg == 0] = gmean[bg == 0]
+                    gauss[1][bg == 0] = gvar[bg == 0]
 
-            BGimgs.append(bg)
-            if outdir is not None:
-                im = Image.fromarray((bg * 255).astype('uint8'))
-                im.save(outdir + name)
+                BGimgs.append(bg)
+                if outdir is not None:
+                    im = Image.fromarray((bg * 255).astype('uint8'))
+                    im.save(outdir + name)
     return np.asarray(BGimgs)
 
 
@@ -336,6 +370,8 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
         recall = []
         indr = None
         f1_mat = np.zeros((int(maxa / up),))
+        pre_mat = np.zeros((int(maxa / up), ))
+        rec_mat = np.zeros((int(maxa / up), ))
 
     alpha = alpha_start
     rho = rho_start
@@ -352,13 +388,8 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
                 bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, rho, adaptive=adaptive)
 
             else:
-                gauss0 = getGaussRGB(inputpath, frmStart, frmEnd, 0)
-                bg0 = getBGRGB(inputpath, frmStart + step, frmEnd + step, gauss0, 0, alpha)
-                gauss1 = getGaussRGB(inputpath, frmStart, frmEnd, 1)
-                bg1 = getBGRGB(inputpath, frmStart + step, frmEnd + step, gauss1, 1, alpha)
-                gauss2 = getGaussRGB(inputpath, frmStart, frmEnd, 2)
-                bg2 = getBGRGB(inputpath, frmStart + step, frmEnd + step, gauss2, 2, alpha)
-                bgad = bg0*bg1*bg2
+                gauss = getGauss(inputpath, tr_frmStart, tr_frmEnd, dimension=dimension)
+                bgad = getBG(inputpath, te_frmStart, te_frmEnd, gauss, alpha, adaptive=False, dimension=dimension)
 
             # Adaptative variables
             TP_fnA, TN_fnA, FP_fnA, FN_fnA = added_evaluation(groundTruthImgs, bgad)
@@ -371,8 +402,6 @@ def get_alpha_rho(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
             rho += up
             if indr is not None:
                 indr += 1
-
-
 
         alpha += up
         inda += 1
@@ -510,3 +539,7 @@ def createTmpSequence(frmStart, frmEnd, choiceOfDataset):
             os.rename(filename, '../datasets/'+choiceOfDataset+'/tmpSequence/in'+str(counter)+'.jpg')
         counter += 1
     return
+
+
+def createMOG(hist=150, thr=10, shadows=False):
+    return cv2.createBackgroundSubtractorMOG2(history=hist, varThreshold=thr, detectShadows=shadows)
