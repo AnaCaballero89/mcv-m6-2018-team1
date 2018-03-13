@@ -11,7 +11,8 @@ def task2(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
 
     recallList = []
     precisionList = []
-    
+    if not os.path.isdir('week3Results/task2/'):
+        os.makedirs('week3Results/task2/')
     lst_tempdir=['week3Results/task2/FG_baselineWeek2_evaluation/',
                 'week3Results/task2/FG_evaluation/',
                 'week3Results/task2/holeFilling/',
