@@ -54,7 +54,7 @@ def task3(choiceOfDataset='highway', frmStartTr=1050, frmEndTr=1200, frmStartEv=
 
     recallList = []
     precisionList = []
-    for threshold in range(10,400,20):
+    for threshold in range(10,2000,100):
         # Reset tmp folders
         shutil.rmtree('../datasets/'+choiceOfDataset+'/tmpSequence/')
         os.makedirs('../datasets/'+choiceOfDataset+'/tmpSequence')
@@ -128,18 +128,20 @@ def task3(choiceOfDataset='highway', frmStartTr=1050, frmEndTr=1200, frmStartEv=
             # cv2.imwrite('task2Results/FG_evaluation/in00'+str(frameCounter)+'.jpg', out/255.0)
             cv2.imwrite('task2Results/FG_evaluation2/in00'+str(frameCounter)+'.jpg', out2/255.0)
             # cv2.imshow('FG',out2)
+            # cv2.waitKey(0)
+            # cv2.destroyAllWindows()
             frameCounter += 1
 
             # Read next frame
             _, frame = cap.read()
 
 
-        # CHANGE NEXT LINE TO abSequencePath = 'task2Results/FG_evaluation2/' if you want to evaluate MOG2
-        abSequencePath = 'task2Results/FG_evaluation2/'
-        imgNames = os.listdir(abSequencePath)
+        # CHANGE NEXT LINE TO sequencePath = 'task2Results/FG_evaluation2/' if you want to evaluate MOG2
+        sequencePath = 'task2Results/FG_evaluation2/'
+        imgNames = os.listdir(sequencePath)
         imgNames.sort()
         for name in imgNames:
-            allFramesResults.append(cv2.cvtColor(cv2.imread(abSequencePath+name), cv2.COLOR_BGR2GRAY))
+            allFramesResults.append(cv2.cvtColor(cv2.imread(sequencePath+name), cv2.COLOR_BGR2GRAY))
         allFramesResults = np.asarray(allFramesResults)
 
         metric = []
@@ -173,4 +175,4 @@ def task3(choiceOfDataset='highway', frmStartTr=1050, frmEndTr=1200, frmStartEv=
         shutil.rmtree('../datasets/'+choiceOfDataset+'/tmpSequence/')
         os.makedirs('../datasets/'+choiceOfDataset+'/tmpSequence')
 
-    roc(recallList, precisionList, 'ROC for MOG2')
+    roc(recallList, precisionList, 'ROC for MOG2', dataset=choiceOfDataset)

@@ -75,11 +75,11 @@ while arthresh<=1000:
         except:
             mog2BG = cv2.createBackgroundSubtractorMOG2(150, varThreshold)
         groundTruthImgs = readGT(groundTruthPath, te_frmStart, te_frmEnd)
-        
+
         #########
         # Task1 #
         #########
-        
+
         # Hole filling
         recall, prec, f1=task2(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset,conn,arthresh)
         precLst.append(prec)
@@ -103,7 +103,7 @@ print AUC_lst
 #########
 
 # Additional morphological operations
-task3(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset)
+task3(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset, MOGthreshold)
 
 
 #########

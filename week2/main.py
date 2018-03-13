@@ -10,7 +10,7 @@ from task2 import task2
 from task3 import task3
 from task4 import task4
 
-dataset = 'highway'  # 'fall', 'highway', 'traffic'
+dataset = 'traffic'  # 'fall', 'highway', 'traffic'
 
 inputpath='../datasets/' + dataset + '/input/'
 groundTruthPath='../datasets/' + dataset + '/groundtruth/'
@@ -42,7 +42,7 @@ dimension = 1
 #########
 
 # Gaussian distribution + evaluation
-task1(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dimension=dimension, grid_search=False, dataset=dataset)
+# task1(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dimension=dimension, grid_search=False, dataset=dataset)
 
 
 #########
@@ -50,7 +50,7 @@ task1(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd
 #########
 
 # Recursive Gaussian modeling + Evaluate and comparison to non-recursive
-task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dimension, grid_search=False, dataset=dataset)
+# task2(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dimension, grid_search=False, dataset=dataset)
 
 
 #########
@@ -66,4 +66,4 @@ task3(dataset, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd)
 #########
 
 # Color sequences
-task4(choiceOfDataset=dataset, frmStartTr=tr_frmStart, frmEndTr=tr_frmEnd)
+# task4(choiceOfDataset=dataset, frmStartTr=tr_frmStart, frmEndTr=tr_frmEnd)
