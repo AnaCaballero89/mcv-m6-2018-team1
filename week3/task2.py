@@ -82,10 +82,10 @@ def task2(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
         out = mog2BG.apply(frame, learningRate=0.01)
         baselineOut = cv2.threshold(out, 50, 255, cv2.THRESH_BINARY)[1]
         # Last week's best results
-        cv2.imwrite('week3Results/task1/FG_baselineWeek2_evaluation/in00'+str(frameCounter)+'.jpg', baselineOut/255.0)
+        cv2.imwrite('week3Results/task2/FG_baselineWeek2_evaluation/in00'+str(frameCounter)+'.jpg', baselineOut/255.0)
         out = ndimage.binary_fill_holes(out).astype(int)
         # Hole-filled images
-        cv2.imwrite('week3Results/task1/FG_evaluation/in00'+str(frameCounter)+'.jpg', out)
+        cv2.imwrite('week3Results/task2/FG_evaluation/in00'+str(frameCounter)+'.jpg', out)
         frameCounter += 1
 
         # Read next frame
@@ -93,7 +93,7 @@ def task2(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStar
 
 
     # CHANGE NEXT LINE TO sequencePath = 'week3Results/task1/FG_baselineWeek2_evaluation/' if you want to evaluate last week's best results
-    sequencePath = 'week3Results/task1/FG_evaluation/'
+    sequencePath = 'week3Results/task2/FG_evaluation/'
     imgNames = os.listdir(sequencePath)
     imgNames.sort()
     for name in imgNames:
