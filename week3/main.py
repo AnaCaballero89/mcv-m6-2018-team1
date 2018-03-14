@@ -54,22 +54,21 @@ def main():
     #########
 
     # Hole filling
-    #task1(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset)
+    task1(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset)
 
 
     #########
     # Task2 #
     #########
-    """
     # Area filtering
-    precLst=[]
-    recLst=[]
-    f1Lst=[]
     treshLst=[]
     AUC_lst=[]
     arthreshLst=[]
     conn,arthresh=4,0
     while arthresh<=1000:
+        precLst=[]
+        recLst=[]
+        f1Lst=[]
         varThreshold=0
         while varThreshold<2000:
             if "2" in cv2.__version__:
@@ -97,13 +96,13 @@ def main():
         arthreshLst.append(arthresh)
         AUC_lst.append(AUC0)
         arthresh+=100
-    print AUC_lst
-
+    
+    print 'P that maximise AUC: ' + arthreshLst[np.argmax(AUC_lst)]
 
     #########
     # Task3 #
     #########
-    """
+    
     # Additional morphological operations
     task3(mog2BG, inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset, MOGthreshold)
     
@@ -111,7 +110,7 @@ def main():
     #########
     # Task4 #
     #########
-    """
+    
     # Shadow removal
     task4(inputpath, groundTruthPath, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset, MOGthreshold, dimension=3, method='MOG')
     
@@ -120,7 +119,7 @@ def main():
     #########
     
     # Update PR Curve and AUC
-    #task5(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset)
-    """
+    task5(inputpath, groundTruthImgs, tr_frmStart, tr_frmEnd, te_frmStart, te_frmEnd, dataset)
+    
 
 main()
