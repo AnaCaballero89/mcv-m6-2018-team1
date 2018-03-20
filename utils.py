@@ -192,7 +192,7 @@ def readOF(ofPath):
     images = []
     for name in imgNames:
         if name.endswith('.png') or name.endswith('.jpg') or name.endswith('.jpeg'):
-            images.append(cv2.imread(ofPath+name, -1))
+            images.append(cv2.imread(ofPath + name, -1))
     return images
 
 
@@ -581,7 +581,7 @@ def opticalFlowMetrics(flowResult, flowGT, frameName=0, plot=True):
             convertedPixelGT_v = (float(flowGT[i][j][2])-2**15)/64.0
             # If ground truth is available, compare it to the estimation result using Euclidean distance
             if flowGT[i][j][0] == 1:
-                dist = math.sqrt((convertedPixelResult_u-convertedPixelGT_u)**2+(convertedPixelResult_v-convertedPixelGT_v)**2)
+                dist = np.sqrt((convertedPixelResult_u-convertedPixelGT_u)**2+(convertedPixelResult_v-convertedPixelGT_v)**2)
                 distances.append(dist)
                 errorImage.append(dist)
                 # If the distance is more than the threshold, consider the pixel as erroneous
@@ -595,6 +595,10 @@ def opticalFlowMetrics(flowResult, flowGT, frameName=0, plot=True):
     msen = np.mean(distances)
     pepn = np.mean(errPixels)*100
 
+    print "Mean Square Error in Non-occluded areas (MSEN): ", msen
+    print "Percentage of Erroneous Pixels in Non-occluded areas (PEPN): ", pepn, "%"
+
+    """
     # Print[, plot] and return results
     if frameName != 0:
         print "\n###########\nFrame: ", frameName
@@ -615,5 +619,29 @@ def opticalFlowMetrics(flowResult, flowGT, frameName=0, plot=True):
     plt.ylabel('N. of pixels (%)')
     plt.title('Histogram of Error per pixel')
     plt.show()
-
+    """
     return msen, pepn, errorImage
+
+
+def OF_Farneback(frame1, frame2, visualise=True, outdir=None, fn='0', winsize=10, ):
+    prvs = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
+    nxt = cv2.cvtColor(frame2, cv2.COLOR_BGR2GRAY)
+    hsv = np.zeros_like(frame1)
+    hsv[..., 1] = 255
+
+    # while(1):
+    next = cv2.cvtColor(frame2, cv2.COLOR_BGR2GRAY)
+    flow = cv2.calcOpticalFlowFarneback(prvs, nxt, flow=None,
+                                        pyr_scale=0.5, levels=1, winsize=winsize,
+                                        iterations=2,
+                                        poly_n=5, poly_sigma=1.1, flags=0)
+    if visualise is True:
+        mag, ang = cv2.cartToPolar(flow[..., 0], flow[..., 1])
+        hsv[..., 0] = ang * 180 / np.pi / 2
+        hsv[..., 2] = cv2.normalize(mag, None, 0, 255, cv2.NORM_MINMAX)
+
+        rgb = cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
+        if not outdir is None:
+            cv2.imwrite(outdir + fn + '.png', rgb)
+
+    return flow
