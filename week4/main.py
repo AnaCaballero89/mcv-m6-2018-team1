@@ -14,7 +14,7 @@ from task2_3 import task2_3
 
 
 def main():
-    dataset = ''
+    dataset = 'seq_157'
 
     if dataset == 'traffic':
         tr_frmStart = 950
@@ -24,16 +24,12 @@ def main():
         MOGthreshold = 330
         inputpath = '../datasets/' + dataset + '/input/'
         groundTruthPath = '../datasets/' + dataset + '/groundtruth/'
-    elif dataset == 'seq_45':
-        tr_frmStart = 10
-        tr_frmEnd = 11
+    elif dataset == 'seq_045':
         inputpath = '../datasets/optical_flow_w1task3/' + dataset + '/input/'
         groundTruthPath = '../datasets/optical_flow_w1task3/' + dataset + '/groundtruth/'
     elif dataset == 'seq_157':
-        tr_frmStart = 10
-        tr_frmEnd = 11
         inputpath = '../datasets/optical_flow_w1task3/' + dataset + '/input/'
-        groundTruthPath = '../datasets/optical_flow_w1task3' + dataset + '/groundtruth/'
+        groundTruthPath = '../datasets/optical_flow_w1task3/' + dataset + '/groundtruth/'
     else:
         print "You haven't defined the right dataset. Options are: highway, fall or traffic."
         exit(0)
@@ -43,7 +39,7 @@ def main():
     ###########
 
     # Optical Flow with Block Matching
-    task1_1()
+    task1_1(inputpath, groundTruthPath, dataset)
 
     ###########
     # Task1.2 #
