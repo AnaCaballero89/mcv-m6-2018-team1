@@ -14,6 +14,29 @@ from task2_3 import task2_3
 
 
 def main():
+    dataset = ''
+
+    if dataset == 'traffic':
+        tr_frmStart = 950
+        tr_frmEnd = 1000
+        te_frmStart = 1001
+        te_frmEnd = 1050
+        MOGthreshold = 330
+        inputpath = '../datasets/' + dataset + '/input/'
+        groundTruthPath = '../datasets/' + dataset + '/groundtruth/'
+    elif dataset == 'seq_45':
+        tr_frmStart = 10
+        tr_frmEnd = 11
+        inputpath = '../datasets/optical_flow_w1task3/' + dataset + '/input/'
+        groundTruthPath = '../datasets/optical_flow_w1task3/' + dataset + '/groundtruth/'
+    elif dataset == 'seq_157':
+        tr_frmStart = 10
+        tr_frmEnd = 11
+        inputpath = '../datasets/optical_flow_w1task3/' + dataset + '/input/'
+        groundTruthPath = '../datasets/optical_flow_w1task3' + dataset + '/groundtruth/'
+    else:
+        print "You haven't defined the right dataset. Options are: highway, fall or traffic."
+        exit(0)
 
     ###########
     # Task1.1 #
