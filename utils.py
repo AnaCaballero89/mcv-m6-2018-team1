@@ -561,7 +561,7 @@ def createMOG(hist=150, thr=10, shadows=False):
     return cv2.createBackgroundSubtractorMOG2(history=hist, varThreshold=thr, detectShadows=shadows)
 
 
-def opticalFlowMetrics(flowResult, flowGT, frameName=0, plot=True):
+def opticalFlowMetrics(flowResult, flowGT, frameName=0, plot=True, normInp=True):
 
     # To compute MSEN (Mean Square Error in Non-occluded areas)
     distances = []
@@ -575,8 +575,12 @@ def opticalFlowMetrics(flowResult, flowGT, frameName=0, plot=True):
     for i in range(np.shape(flowResult)[0]):
         for j in range(np.shape(flowResult)[1]):
             # Convert u-/v-flow into floating point values
-            convertedPixelResult_u = (float(flowResult[i][j][1])-2**15)/64.0
-            convertedPixelResult_v = (float(flowResult[i][j][2])-2**15)/64.0
+            if normInp:
+                convertedPixelResult_u = (float(flowResult[i][j][1])-2**15)/64.0
+                convertedPixelResult_v = (float(flowResult[i][j][2])-2**15)/64.0
+            else:
+                convertedPixelResult_u = float(flowResult[i][j][1])
+                convertedPixelResult_v = float(flowResult[i][j][2])
             convertedPixelGT_u = (float(flowGT[i][j][1])-2**15)/64.0
             convertedPixelGT_v = (float(flowGT[i][j][2])-2**15)/64.0
             # If ground truth is available, compare it to the estimation result using Euclidean distance
@@ -623,7 +627,7 @@ def opticalFlowMetrics(flowResult, flowGT, frameName=0, plot=True):
     return msen, pepn, errorImage
 
 
-def OF_Farneback(frame1, frame2, visualise=True, outdir=None, fn='0', winsize=10, ):
+def OF_Farneback(frame1, frame2, visualise=True, outdir=None, fn='0', winsize=10):
     prvs = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
     nxt = cv2.cvtColor(frame2, cv2.COLOR_BGR2GRAY)
     hsv = np.zeros_like(frame1)
@@ -645,3 +649,57 @@ def OF_Farneback(frame1, frame2, visualise=True, outdir=None, fn='0', winsize=10
             cv2.imwrite(outdir + fn + '.png', rgb)
 
     return flow
+
+
+def read_of_images(inputpath):
+    ImgNames = os.listdir(inputpath)
+    ImgNames.sort()
+    images = []
+    for idx, name in enumerate(ImgNames):
+        if name.endswith('.png') or name.endswith('.jpg') or name.endswith('.jpeg'):
+            images.append(cv2.cvtColor(cv2.imread(inputpath + name), cv2.COLOR_BGR2GRAY))
+    return images
+
+
+def ssd(arr1, arr2):
+    assert len(arr1) == len(arr2)
+    return np.sum((arr1 - arr2) ** 2)
+
+
+def block_matching(im1, im2, window_size, look_area, step):
+    # Initialize the matrices.
+    vx = np.zeros(((im2.shape[0] - window_size) / step + 1, (im2.shape[1] - window_size) / step + 1))
+    vy = np.zeros(((im2.shape[0] - window_size) / step + 1, (im2.shape[1] - window_size) / step + 1))
+    wh = window_size / 2
+
+    # Go through all the blocks.
+    tx, ty = 0, 0
+    for x in xrange(wh, im2.shape[0] - wh - 1, step):
+        for y in xrange(wh, im2.shape[1] - wh - 1, step):
+            nm = im2[x - wh:x + wh + 1, y - wh:y + wh + 1].flatten()
+
+            min_dist = None
+            flox, flowy = 0, 0
+            # Compare each block of the next frame to each block from a greater
+            # region with the same center in the previous frame.
+            for i in xrange(max(x - look_area, wh), min(x + look_area + 1, im1.shape[0] - wh - 1)):
+                for j in xrange(max(y - look_area, wh), min(y + look_area + 1, im1.shape[1] - wh - 1)):
+                    om = im1[i - wh:i + wh + 1, j - wh:j + wh + 1].flatten()
+
+                    # Compute the distance and update minimum.
+                    dist = ssd(nm, om)
+                    if not min_dist or dist < min_dist:
+                        min_dist = dist
+                        flowx, flowy = x - i, y - j
+
+            # Update the flow field. Note the negative tx and the reversal of
+            # flowx and flowy. This is done to provide proper quiver plots, but
+            # should be reconsidered when using it.
+            vx[-tx, ty] = flowy
+            vy[-tx, ty] = flowx
+
+            ty += 1
+        tx += 1
+        ty = 0
+
+    return vx, vy
