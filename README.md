@@ -140,6 +140,29 @@ Every week's submission will be placed in a different folder called 'weekX', whe
 
 
 
+## Week 4:
+
+
+### Task 1: Optical Flow
+
+- [X] Implement a Block Matching solution for optical flow estimation
+    - Forward or Backward compensation
+    - Area of Search
+    - Size of the blocks
+
+- [X] Compare Block Matching vs. Other techniques
+
+### Task 2: Video Stabilization
+
+- [X] Video Stabilization with Block Matching
+    - Use the estimated flow between two frames to align them. Apply it on the 'Traffic' sequence
+    
+- [X] Compare Video Stabilization with Block Matching vs. Other techniques
+    - Compute PR curve and AUC to compare
+    
+- [X] Stabilize your own video
+    
+
 
 
 
