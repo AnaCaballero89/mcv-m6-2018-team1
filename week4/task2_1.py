@@ -80,39 +80,45 @@ def task2_1(inputpath,groundTruthPath, dataset, tr_frmStart=None, tr_frmEnd=None
         str_elem = np.ones((3, 3))
 
     if not (tr_frmStart == None and tr_frmEnd == None and te_frmStart == None and te_frmEnd == None):
-        mog2BG = createMOG(hist=150, thr=330, shadows=False)
-        bgad = []
-
-        for idx, name in enumerate(ImgNames):
-            if idx <= (te_frmEnd-tr_frmStart+1)/2:
-                if name.endswith('.png') or name.endswith('.jpg') or name.endswith('.jpeg'):
-                    # Learning
-                    out = mog2BG.apply(cv2.imread(inputpath + name), learningRate=0.01)
-
-        te_ind = 0
-        for idx, name in enumerate(ImgNames):
-            if idx > (te_frmEnd - tr_frmStart + 1) / 2:
-                if name.endswith('.png') or name.endswith('.jpg') or name.endswith('.jpeg'):
-
-                    # Testing
-                    im = mog2BG.apply(cv2.imread(inputpath + name), learningRate=0.01)
-
-                    # Apply Hole-Filling
-                    im = ndimage.binary_fill_holes(im / 255, str_elem).astype(int)
-
-                    bgad.append(arfilt(im, 4, 2000))
-
-                    te_ind += 1
-
-    TP, TN, FP, FN = added_evaluation(np.asarray(color_imagesgt)[51:], np.asarray(bgad), shadow=False)
-    Recall, Pres, F1 = metrics(TP, TN, FP, FN)
-
-    AUC_stb = skmetrics.auc(Recall, Pres, reorder=True)
+        precLst=[]
+        recLst=[]
+        thrsh=10
+        while thrsh<=2000:
+            mog2BG = createMOG(hist=150, thr=thrsh, shadows=False)
+            bgad = []
+    
+            for idx, name in enumerate(ImgNames):
+                if idx <= (te_frmEnd-tr_frmStart+1)/2:
+                    if name.endswith('.png') or name.endswith('.jpg') or name.endswith('.jpeg'):
+                        # Learning
+                        out = mog2BG.apply(cv2.imread(inputpath + name), learningRate=0.01)
+    
+            te_ind = 0
+            for idx, name in enumerate(ImgNames):
+                if idx > (te_frmEnd - tr_frmStart + 1) / 2:
+                    if name.endswith('.png') or name.endswith('.jpg') or name.endswith('.jpeg'):
+    
+                        # Testing
+                        im = mog2BG.apply(cv2.imread(inputpath + name), learningRate=0.01)
+    
+                        # Apply Hole-Filling
+                        im = ndimage.binary_fill_holes(im / 255, str_elem).astype(int)
+    
+                        bgad.append(arfilt(im, 4, 2000))
+    
+                        te_ind += 1
+    
+            TP, TN, FP, FN = added_evaluation(np.asarray(color_imagesgt)[51:], np.asarray(bgad), shadow=False)
+            Recall, Pres, F1 = metrics(TP, TN, FP, FN)
+            precLst.append(Pres)
+            recLst.append(Recall)
+            thrsh+=100
+    AUC_stb = skmetrics.auc(recLst, precLst, reorder=True)
     lbl_stb = 'Stabilised, AUC %.2f' % AUC_stb
 
     plt.xlabel('Recall')
     plt.ylabel('Precision')
-    plt.plot(Recall, Pres, color='r', label=lbl_stb)
+    plt.plot(recLst, precLst, color='r', label=lbl_stb)
     plt.legend()
 
     plt.show()
