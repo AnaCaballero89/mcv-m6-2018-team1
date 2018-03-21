@@ -51,7 +51,7 @@ def main():
     # Task1.2 #
     ###########
     # Block Matching vs Other Techniques
-    task1_2()
+    task1_2(inputpath,groundTruthPath)
 
     ###########
     # Task2.1 #
