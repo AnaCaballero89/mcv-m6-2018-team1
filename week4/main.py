@@ -14,7 +14,13 @@ from task2_3 import task2_3
 
 
 def main():
-    dataset = 'seq_157'
+    dataset = 'traffic'
+
+    tr_frmStart = None
+    tr_frmEnd = None
+    te_frmStart = None
+    te_frmEnd = None
+
 
     if dataset == 'traffic':
         tr_frmStart = 950
@@ -39,7 +45,7 @@ def main():
     ###########
 
     # Optical Flow with Block Matching
-    task1_1(inputpath, groundTruthPath, dataset)
+    #task1_1(inputpath, groundTruthPath, dataset)
 
     ###########
     # Task1.2 #
@@ -52,7 +58,7 @@ def main():
     ###########
 
     # Video stabilization with Block Matching
-    task2_1()
+    task2_1(inputpath,groundTruthPath, dataset, tr_frmStart=tr_frmStart, tr_frmEnd=tr_frmEnd, te_frmStart=te_frmStart, te_frmEnd=te_frmEnd)
 
     ###########
     # Task2.2 #
