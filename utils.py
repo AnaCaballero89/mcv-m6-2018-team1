@@ -668,38 +668,113 @@ def ssd(arr1, arr2):
 
 def block_matching(im1, im2, window_size, look_area, step):
     # Initialize the matrices.
-    vx = np.zeros(((im2.shape[0] - window_size) / step + 1, (im2.shape[1] - window_size) / step + 1))
-    vy = np.zeros(((im2.shape[0] - window_size) / step + 1, (im2.shape[1] - window_size) / step + 1))
-    wh = window_size / 2
+    vec_field_x = np.zeros(((im2.shape[0] - window_size) / step + 1, (im2.shape[1] - window_size) / step + 1))
+    vec_field_y = np.zeros(((im2.shape[0] - window_size) / step + 1, (im2.shape[1] - window_size) / step + 1))
+    win_st = window_size / 2
 
-    # Go through all the blocks.
+    # Take actual frame and compare with previuos one (BWD compensation)
     tx, ty = 0, 0
-    for x in xrange(wh, im2.shape[0] - wh - 1, step):
-        for y in xrange(wh, im2.shape[1] - wh - 1, step):
-            nm = im2[x - wh:x + wh + 1, y - wh:y + wh + 1].flatten()
+    for x in xrange(win_st, im2.shape[0] - win_st - 1, step):
+        for y in xrange(win_st, im2.shape[1] - win_st - 1, step):
+            nm = im2[x - win_st:x + win_st + 1, y - win_st:y + win_st + 1].flatten()
 
             min_dist = None
-            flox, flowy = 0, 0
-            # Compare each block of the next frame to each block from a greater
-            # region with the same center in the previous frame.
-            for i in xrange(max(x - look_area, wh), min(x + look_area + 1, im1.shape[0] - wh - 1)):
-                for j in xrange(max(y - look_area, wh), min(y + look_area + 1, im1.shape[1] - wh - 1)):
-                    om = im1[i - wh:i + wh + 1, j - wh:j + wh + 1].flatten()
+            flow_x, flow_y = 0, 0
+            for i in xrange(max(x - look_area, win_st), min(x + look_area + 1, im1.shape[0] - win_st - 1)):
+                for j in xrange(max(y - look_area, win_st), min(y + look_area + 1, im1.shape[1] - win_st - 1)):
+                    om = im1[i - win_st:i + win_st + 1, j - win_st:j + win_st + 1].flatten()
 
-                    # Compute the distance and update minimum.
                     dist = ssd(nm, om)
                     if not min_dist or dist < min_dist:
                         min_dist = dist
-                        flowx, flowy = x - i, y - j
+                        flow_x = x - i
+                        flow_y = y - j
 
-            # Update the flow field. Note the negative tx and the reversal of
-            # flowx and flowy. This is done to provide proper quiver plots, but
-            # should be reconsidered when using it.
-            vx[-tx, ty] = flowy
-            vy[-tx, ty] = flowx
+            vec_field_x[-tx, ty] = flow_y
+            vec_field_y[-tx, ty] = flow_x
 
             ty += 1
         tx += 1
         ty = 0
 
-    return vx, vy
+    return vec_field_x, vec_field_y
+
+
+def stabiliseRaul(indir, gtdir, frmStart, frmEnd):
+    resultsDir = 'ResultsStab/'
+    if not os.path.isdir(resultsDir):
+        os.mkdir(resultsDir)
+    ResultsGT = resultsDir + 'groundtruth/'
+    ResultsIN = resultsDir + 'input/'
+    if not os.path.isdir(ResultsGT):
+        os.mkdir(ResultsGT)
+    if not os.path.isdir(ResultsIN):
+        os.mkdir(ResultsIN)
+    matstack = np.identity(3)
+    matlog = []
+    inp = [x for x in os.listdir(indir) if int(x[-8:-4]) >= frmStart and int(x[-8:-4]) <= frmEnd]
+    inp.sort()
+    gth = [x for x in os.listdir(gtdir) if int(x[-8:-4]) >= frmStart and int(x[-8:-4]) <= frmEnd]
+    gth.sort()
+    old = cv2.cvtColor(cv2.imread(indir + inp[0]), cv2.COLOR_BGR2GRAY)
+    for im in inp:
+        img = cv2.imread(indir + im)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        old_features = cv2.goodFeaturesToTrack(old, 400, 0.01, 10)
+
+        cur_features, st, err = cv2.calcOpticalFlowPyrLK(old, gray, old_features, None)
+
+        st[sum(((old_features - cur_features) * 2).reshape((len(st), 2)).transpose((1, 0))) > 64 * 2] = 0
+        for old, cur in zip(old_features[st == 1], cur_features[st == 1]):
+            old = tuple(old)
+            cur = tuple(cur)
+
+            cv2.line(img, old, cur, (0, 255, 0), 1)
+            cv2.circle(img, cur, 4, (0, 255, 0), 1)
+
+        if st.sum() == 0:
+            matlog.append(matstack[:2])
+        else:
+            mat = cv2.estimateRigidTransform(old_features[st == 1], cur_features[st == 1], False)
+
+            if mat is None:
+                matlog.append(matstack[:2])
+            else:
+                mat = np.append(mat, np.array([[0, 0, 1]]), axis=0)
+                matstack = matstack.dot(mat)
+                matlog.append(matstack[:2])
+
+        # print(','.join(str(x) for x in matstack[:2].reshape(6)))
+
+        # cv2.imshow('frame', img)
+        # cv2.waitKey(1)
+
+        old = gray
+
+    #
+    # cam = cv2.VideoCapture('in.mp4')
+    # fps = cam.get(cv2.CAP_PROP_FPS)
+    fps = 50
+    # out = cv2.VideoWriter('out.mp4', cv2.VideoWriter_fourcc(*'X264'), 50, (
+    #    int(320),
+    #    int(270),
+    # ))
+    # out.write(cam.read()[1])
+
+    for i, mat in enumerate(matlog):
+        img = cv2.imread(indir + inp[i])
+        gtimg = cv2.cvtColor(cv2.imread(gtdir + gth[i]), cv2.COLOR_BGR2GRAY)
+
+        d = matlog[max(0, i - int(fps)):min(i + int(fps), len(matlog) - 1)]
+        avg = np.append(sum(d) / len(d), np.array([[0, 0, 1]]), axis=0)
+        mat = np.append(mat, np.array([[0, 0, 1]]), axis=0)
+        dot = np.linalg.inv(mat).dot(avg)
+
+        warp = cv2.warpAffine(img, dot[:2], img.shape[1::-1])
+        warp2 = cv2.warpAffine(gtimg, dot[:2], gtimg.shape[1::-1])
+        cv2.imwrite(ResultsIN + inp[i], warp)
+        cv2.imwrite(ResultsGT + gth[i], warp2)
+    #   cv2.imshow('smoothing', warp)
+    #
+    ##    out.write(warp)
+    #    cv2.waitKey(1)
