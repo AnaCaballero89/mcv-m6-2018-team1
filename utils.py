@@ -558,7 +558,10 @@ def createTmpSequence(frmStart, frmEnd, choiceOfDataset):
 
 
 def createMOG(hist=150, thr=10, shadows=False):
-    return cv2.createBackgroundSubtractorMOG2(history=hist, varThreshold=thr, detectShadows=shadows)
+    if "2" in cv2.__version__:
+        return cv2.BackgroundSubtractorMOG2(history=hist, varThreshold=thr, bShadowDetection = shadows)
+    else:
+        return cv2.createBackgroundSubtractorMOG2(history=hist, varThreshold=thr, detectShadows=shadows)
 
 
 def opticalFlowMetrics(flowResult, flowGT, frameName=0, plot=True, normInp=True):
