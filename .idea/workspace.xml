@@ -1,0 +1,1362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6249207c-4ce2-4705-bf40-a85f4d9d5856" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in002.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in003.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in005.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in006.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in007.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in008.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in009.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in010.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in011.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in012.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in013.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in014.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in015.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in016.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in017.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in018.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in019.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in020.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in021.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in022.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in023.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in024.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in025.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in026.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in027.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in028.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in029.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in030.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in031.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in032.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in033.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in034.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in035.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in036.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in037.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in038.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in039.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in040.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in041.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in042.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in043.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in044.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in045.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in046.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in047.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in048.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in049.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/traffic/tmpSequence/in050.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/ROC_highway.png" beforeDir="false" afterPath="$PROJECT_DIR$/week3/ROC_highway.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/week3/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/task1.py" beforeDir="false" afterPath="$PROJECT_DIR$/week3/task1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/task3.py" beforeDir="false" afterPath="$PROJECT_DIR$/week3/task3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/task4.py" beforeDir="false" afterPath="$PROJECT_DIR$/week3/task4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/task5.py" beforeDir="false" afterPath="$PROJECT_DIR$/week3/task5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001511.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001512.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001513.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001514.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001515.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001516.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001517.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001518.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001519.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001520.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001521.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001522.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001523.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001524.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001525.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001526.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001527.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001528.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001529.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001530.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001531.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001532.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001533.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001534.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001535.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001536.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001537.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001538.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001539.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001540.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001541.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001542.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001543.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001544.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001545.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001546.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001547.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001548.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001549.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001550.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001551.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001552.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001553.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001554.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001555.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001556.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001557.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001558.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001559.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_baselineWeek2_evaluation/in001560.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001511.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001511.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001512.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001512.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001513.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001513.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001514.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001514.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001515.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001515.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001516.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001516.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001517.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001517.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001518.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001518.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001519.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001519.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001520.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001520.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001521.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001521.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001522.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001522.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001523.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001523.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001524.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001524.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001525.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001525.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001526.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001526.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001527.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001527.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001528.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001528.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001529.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001529.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001530.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001530.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001531.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001531.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001532.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001532.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001533.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001533.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001534.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001534.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001535.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001535.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001536.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001536.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001537.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001537.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001538.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001538.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001539.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001539.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001540.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001540.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001541.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001541.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001542.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001542.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001543.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001543.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001544.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001544.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001545.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001545.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001546.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001546.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001547.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001547.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001548.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001548.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001549.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001549.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001550.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001550.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001551.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001551.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001552.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001552.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001553.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001553.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001554.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001554.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001555.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001555.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001556.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001556.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001557.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001557.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001558.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001558.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001559.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001559.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001560.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task1/FG_evaluation/in001560.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1460.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1461.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1462.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1463.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1464.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1465.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1466.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1467.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1468.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1469.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1470.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1471.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1472.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1473.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1474.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1475.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1476.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1477.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1478.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1479.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1480.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1481.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1482.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1483.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1484.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1485.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1486.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1487.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1488.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1489.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1490.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1491.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1492.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1493.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1494.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1495.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1496.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1497.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1498.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1499.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1500.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1501.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1502.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1503.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1504.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1505.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1506.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1507.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1508.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1509.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task1/baseWeek2Results/fg1510.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/Icon&#13;" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001002.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001003.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001005.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001006.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001007.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001008.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001009.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001010.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001011.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001012.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001013.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001014.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001015.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001016.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001017.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001018.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001019.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001020.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001021.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001022.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001023.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001024.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001025.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001026.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001027.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001028.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001029.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001030.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001031.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001032.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001033.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001034.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001035.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001036.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001037.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001038.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001039.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001040.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001041.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001042.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001043.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001044.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001045.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001046.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001047.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001048.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001049.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001050.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001511.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001511.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001512.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001512.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001513.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001513.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001514.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001514.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001515.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001515.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001516.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001516.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001517.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001517.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001518.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001518.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001519.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001519.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001520.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001520.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001521.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001521.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001522.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001522.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001523.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001523.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001524.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001524.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001525.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001525.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001526.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001526.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001527.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001527.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001528.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001528.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001529.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001529.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001530.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001530.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001531.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001531.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001532.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001532.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001533.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001533.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001534.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001534.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001535.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001535.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001536.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001536.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001537.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001537.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001538.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001538.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001539.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001539.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001540.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001540.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001541.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001541.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001542.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001542.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001543.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001543.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001544.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001544.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001545.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001545.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001546.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001546.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001547.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001547.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001548.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001548.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001549.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001549.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001550.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001550.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001551.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001551.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001552.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001552.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001553.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001553.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001554.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001554.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001555.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001555.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001556.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001556.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001557.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001557.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001558.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001558.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001559.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001559.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001560.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_baselineWeek2_evaluation/in001560.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001511.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001511.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001512.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001512.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001513.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001513.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001514.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001514.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001515.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001515.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001516.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001516.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001517.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001517.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001518.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001518.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001519.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001519.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001520.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001520.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001521.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001521.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001522.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001522.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001523.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001523.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001524.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001524.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001525.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001525.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001526.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001526.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001527.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001527.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001528.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001528.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001529.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001529.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001530.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001530.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001531.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001531.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001532.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001532.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001533.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001533.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001534.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001534.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001535.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001535.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001536.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001536.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001537.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001537.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001538.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001538.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001539.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001539.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001540.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001540.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001541.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001541.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001542.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001542.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001543.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001543.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001544.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001544.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001545.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001545.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001546.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001546.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001547.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001547.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001548.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001548.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001549.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001549.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001550.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001550.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001551.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001551.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001552.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/FG_evaluation/in001552.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/Icon&#13;" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1461.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1461.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1462.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1462.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1463.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1463.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1464.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1464.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1465.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1465.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1466.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1466.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1467.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1467.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1468.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1468.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1469.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1469.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1470.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1470.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1471.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1471.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1472.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1472.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1473.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1473.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1474.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1474.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1475.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1475.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1476.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1476.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1477.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1477.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1478.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1478.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1479.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1479.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1480.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1480.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1481.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1481.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1482.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1482.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1483.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1483.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1484.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1484.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1485.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1485.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1486.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1486.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1487.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1487.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1488.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1488.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1489.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1489.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1490.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1490.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1491.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1491.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1492.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1492.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1493.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1493.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1494.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1494.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1495.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1495.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1496.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1496.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1497.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1497.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1498.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1498.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1499.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1499.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1500.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1500.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1501.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1501.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1502.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1502.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1503.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1503.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1504.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1504.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1505.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1505.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1506.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1506.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1507.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1507.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1508.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1508.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1509.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1509.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1510.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg1510.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg950.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg951.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg952.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg953.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg954.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg955.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg956.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg957.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg958.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg959.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg960.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg961.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg962.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg963.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg964.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg965.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg966.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg967.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg968.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg969.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg970.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg971.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg972.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg973.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg974.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg975.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg976.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg977.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg978.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg979.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg980.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg981.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg982.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg983.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg984.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg985.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg986.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg987.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg988.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg989.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg990.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg991.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg992.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg993.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg994.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg995.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg996.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg997.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg998.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/baseWeek2Results/fg999.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/Icon&#13;" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1460.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1461.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1462.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1463.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1464.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1465.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1466.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1467.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1468.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1469.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1470.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1471.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1472.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1473.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1474.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1475.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1476.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1477.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1478.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1479.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1480.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1481.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1482.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1483.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1484.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1485.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1486.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1487.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1488.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1489.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1490.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1491.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1492.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1493.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1494.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1495.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1496.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1497.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1498.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1499.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1500.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1501.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1502.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1503.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1504.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1505.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1506.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1507.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1508.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1509.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo1510.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo950.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo951.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo952.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo953.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo954.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo955.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo956.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo957.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo958.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo959.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo960.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo961.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo962.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo963.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo964.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo965.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo966.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo967.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo968.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo969.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo970.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo971.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo972.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo973.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo974.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo975.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo976.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo977.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo978.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo979.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo980.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo981.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo982.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo983.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo984.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo985.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo986.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo987.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo988.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo989.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo990.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo991.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo992.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo993.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo994.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo995.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo996.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo997.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo998.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week3/week3Results/task3/mOperators/mo999.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/week4/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week4/task1_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/week4/task1_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week4/task2_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/week4/task2_1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week4/task2_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/week4/task2_2.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="mcv-m6-2018-team1" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/week4/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task2_1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/week4/task2_1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1134">
+              <caret line="65" column="195" selection-start-line="65" selection-start-column="195" selection-end-line="65" selection-end-column="195" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task3.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/week3/task3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="743">
+              <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task2_2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/week4/task2_2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/week3/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="792">
+              <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+              <folding>
+                <marker date="1521648425944" expanded="true" signature="259:1536" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
+              <folding>
+                <element signature="e#239#795#0" />
+                <element signature="e#851#1343#0" />
+                <element signature="e#1379#1513#0" />
+                <element signature="e#1550#1983#0" />
+                <element signature="e#2061#2708#0" />
+                <element signature="e#2757#3037#0" />
+                <element signature="e#3071#3443#0" />
+                <element signature="e#3480#4008#0" />
+                <element signature="e#4064#4502#0" />
+                <element signature="e#4540#5507#0" />
+                <element signature="e#5551#5896#0" />
+                <element signature="e#5923#6174#0" />
+                <element signature="e#6209#6480#0" />
+                <element signature="e#6539#7952#0" />
+                <element signature="e#8076#9386#0" />
+                <element signature="e#9446#10040#0" />
+                <element signature="e#10151#11088#0" />
+                <element signature="e#11125#11627#0" />
+                <element signature="e#11693#12187#0" />
+                <element signature="e#12342#16522#0" />
+                <element signature="e#16610#17679#0" />
+                <element signature="e#17745#18843#0" />
+                <element signature="e#19232#21686#0" />
+                <element signature="e#21776#22626#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ppe</find>
+      <find>metrics</find>
+      <find>flowResult</find>
+      <find>gt</find>
+      <find>flowGT</find>
+      <find>of</find>
+      <find>thres</find>
+      <find>block</find>
+      <find>createmog</find>
+      <find>groundTruthPath</find>
+      <find>MOGthreshold</find>
+      <find>getting op</find>
+      <find>input</find>
+      <find>week3re</find>
+      <find>tmpse</find>
+      <find>task2_1</find>
+      <find>choice</find>
+      <find>task2</find>
+      <find>week</find>
+      <find>FG_base</find>
+      <find>change</find>
+      <find>week4re</find>
+      <find>groundTruthImgs</find>
+      <find>task2_2</find>
+      <find>readg</find>
+      <find>print</find>
+      <find>groundtruth</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/week3/task1_2.py" />
+        <option value="$PROJECT_DIR$/week3/task2_1.py" />
+        <option value="$PROJECT_DIR$/week3/task2_2.py" />
+        <option value="$PROJECT_DIR$/week3/task2_3.py" />
+        <option value="$PROJECT_DIR$/week3/task1_1.py" />
+        <option value="$PROJECT_DIR$/week4/task1_2.py" />
+        <option value="$PROJECT_DIR$/week3/task2.py" />
+        <option value="$PROJECT_DIR$/week4/main.py" />
+        <option value="$PROJECT_DIR$/week4/task2_2.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/week3/task5.py" />
+        <option value="$PROJECT_DIR$/week3/main.py" />
+        <option value="$PROJECT_DIR$/week4/task2_1.py" />
+        <option value="$PROJECT_DIR$/week3/task3.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="292" />
+    <option name="y" value="24" />
+    <option name="width" value="1400" />
+    <option name="height" value="1028" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mcv-m6-2018-team1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mcv-m6-2018-team1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mcv-m6-2018-team1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mcv-m6-2018-team1" type="462c0819:PsiDirectoryNode" />
+              <item name="optical_flow_w1task3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mcv-m6-2018-team1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mcv-m6-2018-team1" type="462c0819:PsiDirectoryNode" />
+              <item name="optical_flow_w1task3" type="462c0819:PsiDirectoryNode" />
+              <item name="groundtruth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mcv-m6-2018-team1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mcv-m6-2018-team1" type="462c0819:PsiDirectoryNode" />
+              <item name="week3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mcv-m6-2018-team1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mcv-m6-2018-team1" type="462c0819:PsiDirectoryNode" />
+              <item name="week4" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/week4" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="mcv-m6-2018-team1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/week4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/week4/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/week3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="mcv-m6-2018-team1" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/week3/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6249207c-4ce2-4705-bf40-a85f4d9d5856" name="Default" comment="" />
+      <created>1521422455033</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1521422455033</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49390244" visible="true" weight="0.19104804" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5018868" side_tool="true" weight="0.32924336" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32924336" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32984293" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49811321" weight="0.2973822" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49811321" weight="0.32879582" />
+      <window_info id="Favorites" order="2" sideWeight="0.50609756" side_tool="true" weight="0.18867925" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32879582" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
+          <folding>
+            <element signature="e#239#795#0" />
+            <element signature="e#851#1343#0" />
+            <element signature="e#1379#1513#0" />
+            <element signature="e#1550#1983#0" />
+            <element signature="e#2061#2708#0" />
+            <element signature="e#2757#3037#0" />
+            <element signature="e#3071#3443#0" />
+            <element signature="e#3480#4008#0" />
+            <element signature="e#4064#4502#0" />
+            <element signature="e#4540#5507#0" />
+            <element signature="e#5551#5896#0" />
+            <element signature="e#5923#6174#0" />
+            <element signature="e#6209#6480#0" />
+            <element signature="e#6539#7952#0" />
+            <element signature="e#8076#9386#0" />
+            <element signature="e#9446#10040#0" />
+            <element signature="e#10151#11088#0" />
+            <element signature="e#11125#11627#0" />
+            <element signature="e#11693#12187#0" />
+            <element signature="e#12342#16522#0" />
+            <element signature="e#16610#17679#0" />
+            <element signature="e#17745#18843#0" />
+            <element signature="e#19232#21686#0" />
+            <element signature="e#21776#22626#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4068">
+          <caret line="226" column="50" selection-start-line="226" selection-start-column="50" selection-end-line="226" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/task2_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="65" column="195" selection-start-line="65" selection-start-column="195" selection-end-line="65" selection-end-column="195" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+          <folding>
+            <marker date="1521648425944" expanded="true" signature="259:1536" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/task2_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
+          <folding>
+            <element signature="e#239#795#0" />
+            <element signature="e#851#1343#0" />
+            <element signature="e#1379#1513#0" />
+            <element signature="e#1550#1983#0" />
+            <element signature="e#2061#2708#0" />
+            <element signature="e#2757#3037#0" />
+            <element signature="e#3071#3443#0" />
+            <element signature="e#3480#4008#0" />
+            <element signature="e#4064#4502#0" />
+            <element signature="e#4540#5507#0" />
+            <element signature="e#5551#5896#0" />
+            <element signature="e#5923#6174#0" />
+            <element signature="e#6209#6480#0" />
+            <element signature="e#6539#7952#0" />
+            <element signature="e#8076#9386#0" />
+            <element signature="e#9446#10040#0" />
+            <element signature="e#10151#11088#0" />
+            <element signature="e#11125#11627#0" />
+            <element signature="e#11693#12187#0" />
+            <element signature="e#12342#16522#0" />
+            <element signature="e#16610#17679#0" />
+            <element signature="e#17745#18843#0" />
+            <element signature="e#19232#21686#0" />
+            <element signature="e#21776#22626#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4014">
+          <caret line="223" column="50" lean-forward="true" selection-start-line="223" selection-start-column="50" selection-end-line="223" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1116">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/task1_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12096">
+          <caret line="672" column="15" selection-start-line="672" selection-start-column="15" selection-end-line="672" selection-end-column="15" />
+          <folding>
+            <element signature="e#239#795#0" />
+            <element signature="e#851#1343#0" />
+            <element signature="e#1379#1513#0" />
+            <element signature="e#1550#1983#0" />
+            <element signature="e#2061#2708#0" />
+            <element signature="e#2757#3037#0" />
+            <element signature="e#3071#3443#0" />
+            <element signature="e#3480#4008#0" />
+            <element signature="e#4064#4502#0" />
+            <element signature="e#4540#5507#0" />
+            <element signature="e#5551#5896#0" />
+            <element signature="e#5923#6174#0" />
+            <element signature="e#6209#6480#0" />
+            <element signature="e#6539#7952#0" />
+            <element signature="e#8076#9386#0" />
+            <element signature="e#9446#10040#0" />
+            <element signature="e#10151#11088#0" />
+            <element signature="e#11125#11627#0" />
+            <element signature="e#11693#12187#0" />
+            <element signature="e#12342#16522#0" />
+            <element signature="e#16610#17679#0" />
+            <element signature="e#17745#18843#0" />
+            <element signature="e#19232#21686#0" />
+            <element signature="e#21776#22626#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1692">
+          <caret line="94" column="139" selection-start-line="94" selection-start-column="139" selection-end-line="94" selection-end-column="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/task2_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="23" column="56" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1116">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/task1_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/task2_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1692">
+          <caret line="94" column="139" selection-start-line="94" selection-start-column="139" selection-end-line="94" selection-end-column="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10134">
+          <caret line="563" column="67" selection-start-line="563" selection-start-column="67" selection-end-line="563" selection-end-column="67" />
+          <folding>
+            <element signature="e#239#795#0" />
+            <element signature="e#851#1343#0" />
+            <element signature="e#1379#1513#0" />
+            <element signature="e#1550#1983#0" />
+            <element signature="e#2061#2708#0" />
+            <element signature="e#2757#3037#0" />
+            <element signature="e#3071#3443#0" />
+            <element signature="e#3480#4008#0" />
+            <element signature="e#4064#4502#0" />
+            <element signature="e#4540#5507#0" />
+            <element signature="e#5551#5896#0" />
+            <element signature="e#5923#6174#0" />
+            <element signature="e#6209#6480#0" />
+            <element signature="e#6539#7952#0" />
+            <element signature="e#8076#9386#0" />
+            <element signature="e#9446#10040#0" />
+            <element signature="e#10151#11088#0" />
+            <element signature="e#11125#11627#0" />
+            <element signature="e#11693#12187#0" />
+            <element signature="e#12342#16522#0" />
+            <element signature="e#16610#17679#0" />
+            <element signature="e#17745#18843#0" />
+            <element signature="e#19232#21686#0" />
+            <element signature="e#21776#22626#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1998">
+          <caret line="111" column="12" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="112" column="3" selection-start-line="112" selection-start-column="3" selection-end-line="112" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="99" column="66" selection-start-line="99" selection-start-column="66" selection-end-line="99" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="52" lean-forward="true" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/task1_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/task2_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week1/histogram_of_error_45.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week1/results_opticalflow_kitti/results/LKflow_000045_10.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/optical_flow_w1task3/000045_10.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/optical_flow_w1task3/000045_11.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/optical_flow_w1task3/000157_10.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/optical_flow_w1task3/000157_11.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week1/results_opticalflow_kitti/results/LKflow_000157_10.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week1/opticalFlowMetrics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-364">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week1/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="100" column="10" selection-start-line="100" selection-start-column="10" selection-end-line="100" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="94" column="139" selection-start-line="94" selection-start-column="139" selection-end-line="94" selection-end-column="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/task1_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/task2_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+          <folding>
+            <marker date="1521648425944" expanded="true" signature="259:1536" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
+          <folding>
+            <element signature="e#239#795#0" />
+            <element signature="e#851#1343#0" />
+            <element signature="e#1379#1513#0" />
+            <element signature="e#1550#1983#0" />
+            <element signature="e#2061#2708#0" />
+            <element signature="e#2757#3037#0" />
+            <element signature="e#3071#3443#0" />
+            <element signature="e#3480#4008#0" />
+            <element signature="e#4064#4502#0" />
+            <element signature="e#4540#5507#0" />
+            <element signature="e#5551#5896#0" />
+            <element signature="e#5923#6174#0" />
+            <element signature="e#6209#6480#0" />
+            <element signature="e#6539#7952#0" />
+            <element signature="e#8076#9386#0" />
+            <element signature="e#9446#10040#0" />
+            <element signature="e#10151#11088#0" />
+            <element signature="e#11125#11627#0" />
+            <element signature="e#11693#12187#0" />
+            <element signature="e#12342#16522#0" />
+            <element signature="e#16610#17679#0" />
+            <element signature="e#17745#18843#0" />
+            <element signature="e#19232#21686#0" />
+            <element signature="e#21776#22626#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week4/task2_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="65" column="195" selection-start-line="65" selection-start-column="195" selection-end-line="65" selection-end-column="195" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/week3/task3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
