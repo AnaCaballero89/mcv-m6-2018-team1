@@ -29,7 +29,7 @@ def main():
         exit(0)
 
     # Tracking with Kalman Filters
-    task1_1()
+    task1_1(MOGthreshold, inputpath, dataset)
 
     # Tracking with other method
     task1_2()

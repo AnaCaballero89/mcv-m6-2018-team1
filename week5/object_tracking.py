@@ -1,17 +1,47 @@
-from utils import *
+'''
+    File name         : object_tracking.py
+    File Description  : Multi Object Tracker Using Kalman Filter
+                        and Hungarian Algorithm
+    Author            : Srini Ananthakrishnan
+    Date created      : 07/14/2017
+    Date last modified: 07/16/2017
+    Python Version    : 2.7
+'''
+
+# Import python libraries
 import cv2
 import copy
 from detectors import Detectors
 from tracker import Tracker
 
 
+def main():
+    """Main function for multi object tracking
+    Usage:
+        $ python2.7 objectTracking.py
+    Pre-requisite:
+        - Python2.7
+        - Numpy
+        - SciPy
+        - Opencv 3.0 for Python
+    Args:
+        None
+    Return:
+        None
+    """
 
-def task1_1(mogthr, inputpath, dataset):
     # Create opencv video capture object
-    path = inputpath + 'in%06d.jpg'
+    dataset = 'traffic'  # highway, traffic
+    path = dataset + '/input/in%06d.jpg'
+    #cap = cv2.VideoCapture(0)
     cap = cv2.VideoCapture(path)
-
     # Create Object Detector
+    if dataset == 'highway':
+        mogthr = 10
+
+    elif dataset == 'traffic':
+        mogthr = 330
+
     detector = Detectors(thr=mogthr, dataset=dataset)
 
     # Create Object Tracker
@@ -50,12 +80,12 @@ def task1_1(mogthr, inputpath, dataset):
             # Use various colors to indicate different track_id
             for i in range(len(tracker.tracks)):
                 if (len(tracker.tracks[i].trace) > 1):
-                    for j in range(len(tracker.tracks[i].trace) - 1):
+                    for j in range(len(tracker.tracks[i].trace)-1):
                         # Draw trace line
                         x1 = tracker.tracks[i].trace[j][0][0]
                         y1 = tracker.tracks[i].trace[j][1][0]
-                        x2 = tracker.tracks[i].trace[j + 1][0][0]
-                        y2 = tracker.tracks[i].trace[j + 1][1][0]
+                        x2 = tracker.tracks[i].trace[j+1][0][0]
+                        y2 = tracker.tracks[i].trace[j+1][1][0]
                         clr = tracker.tracks[i].track_id % 9
                         cv2.line(frame, (int(x1), int(y1)), (int(x2), int(y2)), track_colors[clr], 2)
 
@@ -89,3 +119,6 @@ def task1_1(mogthr, inputpath, dataset):
     cv2.destroyAllWindows()
 
 
+if __name__ == "__main__":
+    # execute main
+    main()
