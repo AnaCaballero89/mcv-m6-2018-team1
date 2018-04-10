@@ -149,7 +149,7 @@ class Detectors(object):
                 x, y, w, h = cv2.boundingRect(cnt)
                 if np.logical_and(h>blob_radius_thresh, w>blob_radius_thresh):
                     cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-                    b = np.array([[x+h/2], [y+w/2]])
+                    b = np.array([[x+w/2], [y+h/2]])
                     centers.append(np.round(b))
 
             except ZeroDivisionError:

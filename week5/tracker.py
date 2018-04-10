@@ -20,7 +20,7 @@ class Track(object):
         None
     """
 
-    def __init__(self, prediction, trackIdCount):
+    def __init__(self, prediction, trackIdCount, dataset):
         """Initialize variables used by Track class
         Args:
             prediction: predicted centroids of object to be tracked
@@ -29,7 +29,7 @@ class Track(object):
             None
         """
         self.track_id = trackIdCount  # identification of each track object
-        self.KF = KalmanFilter()  # KF instance to track this object
+        self.KF = KalmanFilter(dataset=dataset)  # KF instance to track this object
         self.prediction = np.asarray(prediction)  # predicted centroids (x,y)
         self.skipped_frames = 0  # number of frames skipped undetected
         self.trace = []  # trace path
@@ -60,7 +60,7 @@ class Tracker(object):
         self.tracks = []
         self.trackIdCount = trackIdCount
 
-    def Update(self, detections):
+    def Update(self, detections, dataset):
         """Update tracks vector using following steps:
             - Create tracks if no tracks vector found
             - Calculate cost using sum of square distance
@@ -82,7 +82,7 @@ class Tracker(object):
         # Create tracks if no tracks vector found
         if (len(self.tracks) == 0):
             for i in range(len(detections)):
-                track = Track(detections[i], self.trackIdCount)
+                track = Track(detections[i], self.trackIdCount, dataset)
                 self.trackIdCount += 1
                 self.tracks.append(track)
 
@@ -148,7 +148,7 @@ class Tracker(object):
         if(len(un_assigned_detects) != 0):
             for i in range(len(un_assigned_detects)):
                 track = Track(detections[un_assigned_detects[i]],
-                              self.trackIdCount)
+                              self.trackIdCount, dataset)
                 self.trackIdCount += 1
                 self.tracks.append(track)
 

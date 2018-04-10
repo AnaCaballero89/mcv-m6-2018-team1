@@ -15,7 +15,10 @@ def task1_1(mogthr, inputpath, dataset):
     detector = Detectors(thr=mogthr, dataset=dataset)
 
     # Create Object Tracker
-    tracker = Tracker(0, 0, 50, 100)
+    if dataset == 'highway':
+        tracker = Tracker(200, 0, 200, 100)
+    elif dataset == 'traffic':
+        tracker = Tracker(50, 0, 90, 100)
 
     # Variables initialization
     skip_frame_count = 0
@@ -23,6 +26,11 @@ def task1_1(mogthr, inputpath, dataset):
                     (0, 255, 255), (255, 0, 255), (255, 127, 255),
                     (127, 0, 255), (127, 0, 127)]
     pause = False
+
+    pts1 = np.float32([[120, 100], [257, 100], [25, 200], [250, 200]])
+    pts2 = np.float32([[0, 0], [320, 0], [0, 240], [320, 240]])
+
+    M = cv2.getPerspectiveTransform(pts1, pts2)
 
     # Infinite loop to process video frames
     while True:
@@ -44,7 +52,7 @@ def task1_1(mogthr, inputpath, dataset):
         if (len(centers) > 0):
 
             # Track object using Kalman Filter
-            tracker.Update(centers)
+            tracker.Update(centers, dataset)
 
             # For identified object tracks draw tracking line
             # Use various colors to indicate different track_id
@@ -58,6 +66,9 @@ def task1_1(mogthr, inputpath, dataset):
                         y2 = tracker.tracks[i].trace[j + 1][1][0]
                         clr = tracker.tracks[i].track_id % 9
                         cv2.line(frame, (int(x1), int(y1)), (int(x2), int(y2)), track_colors[clr], 2)
+
+        dst = cv2.warpPerspective(frame, M, (320, 240))
+        cv2.imshow('Homography', dst)
 
         # Display the resulting tracking frame
         cv2.imshow('Tracking', frame)

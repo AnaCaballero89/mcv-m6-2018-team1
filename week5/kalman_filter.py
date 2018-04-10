@@ -19,7 +19,7 @@ class KalmanFilter(object):
     Attributes: None
     """
 
-    def __init__(self):
+    def __init__(self, dataset):
         """Initialize variable used by Kalman Filter class
         Args:
             None
@@ -29,7 +29,11 @@ class KalmanFilter(object):
         self.dt = 0.005  # delta time
 
         self.A = np.array([[1, 0], [0, 1]])  # matrix in observation equations
-        self.u = np.zeros((2, 1))  # previous state vector
+
+        if dataset == 'highway':
+            self.u = np.array([0, 320])  # previous state vector
+        elif dataset == 'traffic':
+            self.u = np.array([320, 240])  # previous state vector
 
         # (x,y) tracking object center
         self.b = np.array([[0], [255]])  # vector of observations
