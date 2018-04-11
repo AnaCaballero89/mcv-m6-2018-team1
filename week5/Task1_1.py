@@ -16,12 +16,11 @@ def task1_1(mogthr, inputpath, dataset):
 
     # Create Object Tracker
     if dataset == 'highway':
-        tracker = Tracker(200, 0, 60, 100)  # Tracker(200, 0, 200, 100)
+        tracker = Tracker(50, 0, 150, 100)  # Tracker(200, 0, 200, 100)
     elif dataset == 'traffic':
-        tracker = Tracker(200, 0, 60, 100)  # Tracker(50, 0, 90, 100)
+        tracker = Tracker(200, 0, 40, 90)  # Tracker(50, 0, 90, 100)
 
     # Variables initialization
-    skip_frame_count = 0
     track_colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0),
                     (0, 255, 255), (255, 0, 255), (255, 127, 255),
                     (127, 0, 255), (127, 0, 127)]
@@ -70,10 +69,10 @@ def task1_1(mogthr, inputpath, dataset):
 
         # Display the resulting tracking frame
         cv2.imshow('Tracking', frame)
-        cv2.imwrite('/Users/santiagoba88/Desktop/' + dataset + '/Tracking/' + str(counter) + '.png', frame)
+        #cv2.imwrite('/Users/santiagoba88/Desktop/' + dataset + '/Tracking/' + str(counter) + '.png', frame)
 
         # Display the original frame
-        cv2.imshow('Original', orig_frame)
+        #cv2.imshow('Original', orig_frame)
 
         # Slower the FPS
         cv2.waitKey(1)

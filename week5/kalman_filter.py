@@ -19,7 +19,7 @@ class KalmanFilter(object):
     Attributes: None
     """
 
-    def __init__(self, dataset):
+    def __init__(self):
         """Initialize variable used by Kalman Filter class
         Args:
             None

@@ -20,7 +20,7 @@ class Track(object):
         None
     """
 
-    def __init__(self, prediction, trackIdCount, dataset):
+    def __init__(self, prediction, trackIdCount):
         """Initialize variables used by Track class
         Args:
             prediction: predicted centroids of object to be tracked
@@ -29,7 +29,7 @@ class Track(object):
             None
         """
         self.track_id = trackIdCount  # identification of each track object
-        self.KF = KalmanFilter(dataset=dataset)  # KF instance to track this object
+        self.KF = KalmanFilter()  # KF instance to track this object
         self.prediction = np.asarray(prediction)  # predicted centroids (x,y)
         self.skipped_frames = 0  # number of frames skipped undetected
         self.trace = []  # trace path
@@ -82,7 +82,7 @@ class Tracker(object):
         # Create tracks if no tracks vector found
         if len(self.tracks) == 0:
             for i in range(len(detections)):
-                track = Track(detections[i], self.trackIdCount, dataset)
+                track = Track(detections[i], self.trackIdCount)
                 self.trackIdCount += 1
                 self.tracks.append(track)
 
@@ -137,7 +137,7 @@ class Tracker(object):
 
                 elif dataset == 'traffic':
                     if np.logical_or(self.tracks[i].skipped_frames > self.max_frames_to_skip,
-                                     self.tracks[i].trace[ln - 1][0] < 40):
+                                     self.tracks[i].trace[ln - 1][1] < 40):
                         del_tracks.append(i)
 
         if len(del_tracks) > 0:  # only when skipped frame exceeds max
@@ -158,7 +158,7 @@ class Tracker(object):
         if len(un_assigned_detects) != 0:
             for i in range(len(un_assigned_detects)):
                 track = Track(detections[un_assigned_detects[i]],
-                              self.trackIdCount, dataset)
+                              self.trackIdCount)
                 self.trackIdCount += 1
                 self.tracks.append(track)
 
