@@ -69,10 +69,9 @@ def task1_1(mogthr, inputpath, dataset):
 
         # Display the resulting tracking frame
         cv2.imshow('Tracking', frame)
-        #cv2.imwrite('/Users/santiagoba88/Desktop/' + dataset + '/Tracking/' + str(counter) + '.png', frame)
 
         # Display the original frame
-        #cv2.imshow('Original', orig_frame)
+        cv2.imshow('Original', orig_frame)
 
         # Slower the FPS
         cv2.waitKey(1)

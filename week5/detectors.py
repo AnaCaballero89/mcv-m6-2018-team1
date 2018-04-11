@@ -115,7 +115,7 @@ class Detectors(object):
 
         fgmask = np.uint8(out)
 
-        if debug == 1:  # 0
+        if debug == 0:
             cv2.imshow('bgsub', fgmask)
 
         # Detect edges
@@ -124,20 +124,14 @@ class Detectors(object):
         if debug == 1:
             cv2.imshow('Edges', edges)
 
-        #cv2.imwrite('/Users/santiagoba88/Desktop/' + self.choiceOfDataset + '/Edges/' + str(counter) + '.png', np.uint8(fgmask))
-
         # Retain only edges within the threshold
         ret, thresh = cv2.threshold(edges, 127, 255, 0)
 
         # Find contours
-        _, contours, hierarchy = cv2.findContours(thresh,
-                                                  cv2.RETR_EXTERNAL,
-                                                  cv2.CHAIN_APPROX_SIMPLE)
+        _, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-        if debug == 1:  # 0
+        if debug == 0:
             cv2.imshow('thresh', thresh)
-
-        #cv2.imwrite('/Users/santiagoba88/Desktop/' + self.choiceOfDataset + '/Contours/' + str(counter) + '.png', np.uint8(thresh))
 
         centers = []  # vector of object centroids in a frame
         # we only care about centroids with size of bug in this example
