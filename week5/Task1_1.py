@@ -16,9 +16,9 @@ def task1_1(mogthr, inputpath, dataset):
 
     # Create Object Tracker
     if dataset == 'highway':
-        tracker = Tracker(200, 0, 200, 100)
+        tracker = Tracker(200, 0, 60, 100)  # Tracker(200, 0, 200, 100)
     elif dataset == 'traffic':
-        tracker = Tracker(50, 0, 90, 100)
+        tracker = Tracker(200, 0, 60, 100)  # Tracker(50, 0, 90, 100)
 
     # Variables initialization
     skip_frame_count = 0
@@ -27,26 +27,27 @@ def task1_1(mogthr, inputpath, dataset):
                     (127, 0, 255), (127, 0, 127)]
     pause = False
 
-    pts1 = np.float32([[120, 100], [257, 100], [25, 200], [250, 200]])
-    pts2 = np.float32([[0, 0], [320, 0], [0, 240], [320, 240]])
-
-    M = cv2.getPerspectiveTransform(pts1, pts2)
-
+    counter = 0
     # Infinite loop to process video frames
     while True:
+        counter += 1
         # Capture frame-by-frame
         ret, frame = cap.read()
+
+        # Stop when no frame
+        if frame is None:
+            break
 
         # Make copy of original frame
         orig_frame = copy.copy(frame)
 
         # Skip initial frames that display logo
-        if (skip_frame_count < 15):
-            skip_frame_count += 1
-            continue
+        #if (skip_frame_count < 200):
+        #    skip_frame_count += 1
+        #    continue
 
         # Detect and return centeroids of the objects in the frame
-        centers = detector.Detect(frame)
+        centers = detector.Detect(frame, counter)
 
         # If centroids are detected then track them
         if (len(centers) > 0):
@@ -58,7 +59,7 @@ def task1_1(mogthr, inputpath, dataset):
             # Use various colors to indicate different track_id
             for i in range(len(tracker.tracks)):
                 if (len(tracker.tracks[i].trace) > 1):
-                    for j in range(len(tracker.tracks[i].trace) - 1):
+                    for j in range(5, len(tracker.tracks[i].trace) - 1):
                         # Draw trace line
                         x1 = tracker.tracks[i].trace[j][0][0]
                         y1 = tracker.tracks[i].trace[j][1][0]
@@ -67,11 +68,9 @@ def task1_1(mogthr, inputpath, dataset):
                         clr = tracker.tracks[i].track_id % 9
                         cv2.line(frame, (int(x1), int(y1)), (int(x2), int(y2)), track_colors[clr], 2)
 
-        dst = cv2.warpPerspective(frame, M, (320, 240))
-        cv2.imshow('Homography', dst)
-
         # Display the resulting tracking frame
         cv2.imshow('Tracking', frame)
+        cv2.imwrite('/Users/santiagoba88/Desktop/' + dataset + '/Tracking/' + str(counter) + '.png', frame)
 
         # Display the original frame
         cv2.imshow('Original', orig_frame)
@@ -94,6 +93,7 @@ def task1_1(mogthr, inputpath, dataset):
                         pause = False
                         print("Resume code..!!")
                         break
+
 
     # When everything done, release the capture
     cap.release()

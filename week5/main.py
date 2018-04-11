@@ -6,7 +6,7 @@ from Task3 import task3
 
 
 def main():
-    dataset = 'highway'  # 'highway', 'traffic'
+    dataset = 'traffic'  # 'highway', 'traffic'
 
     inputpath = '../datasets/' + dataset + '/input/'
     groundTruthPath = '../datasets/' + dataset + '/groundtruth/'

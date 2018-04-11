@@ -80,7 +80,7 @@ class Tracker(object):
         """
 
         # Create tracks if no tracks vector found
-        if (len(self.tracks) == 0):
+        if len(self.tracks) == 0:
             for i in range(len(detections)):
                 track = Track(detections[i], self.trackIdCount, dataset)
                 self.trackIdCount += 1
@@ -115,10 +115,10 @@ class Tracker(object):
         # Identify tracks with no assignment, if any
         un_assigned_tracks = []
         for i in range(len(assignment)):
-            if (assignment[i] != -1):
+            if assignment[i] != -1:
                 # check for cost distance threshold.
                 # If cost is very high then un_assign (delete) the track
-                if (cost[i][assignment[i]] > self.dist_thresh):
+                if cost[i][assignment[i]] > self.dist_thresh:
                     assignment[i] = -1
                     un_assigned_tracks.append(i)
                 pass
@@ -128,8 +128,18 @@ class Tracker(object):
         # If tracks are not detected for long time, remove them
         del_tracks = []
         for i in range(len(self.tracks)):
-            if (self.tracks[i].skipped_frames > self.max_frames_to_skip):
-                del_tracks.append(i)
+            ln = len(self.tracks[i].trace)
+            if ln > 0:
+                if dataset == 'highway':
+                    if np.logical_or(self.tracks[i].skipped_frames > self.max_frames_to_skip,
+                                     self.tracks[i].trace[ln - 1][1] > 200):
+                        del_tracks.append(i)
+
+                elif dataset == 'traffic':
+                    if np.logical_or(self.tracks[i].skipped_frames > self.max_frames_to_skip,
+                                     self.tracks[i].trace[ln - 1][0] < 40):
+                        del_tracks.append(i)
+
         if len(del_tracks) > 0:  # only when skipped frame exceeds max
             for id in del_tracks:
                 if id < len(self.tracks):
@@ -145,7 +155,7 @@ class Tracker(object):
                     un_assigned_detects.append(i)
 
         # Start new tracks
-        if(len(un_assigned_detects) != 0):
+        if len(un_assigned_detects) != 0:
             for i in range(len(un_assigned_detects)):
                 track = Track(detections[un_assigned_detects[i]],
                               self.trackIdCount, dataset)
@@ -156,7 +166,7 @@ class Tracker(object):
         for i in range(len(assignment)):
             self.tracks[i].KF.predict()
 
-            if(assignment[i] != -1):
+            if assignment[i] != -1:
                 self.tracks[i].skipped_frames = 0
                 self.tracks[i].prediction = self.tracks[i].KF.correct(
                                             detections[assignment[i]], 1)
@@ -164,10 +174,12 @@ class Tracker(object):
                 self.tracks[i].prediction = self.tracks[i].KF.correct(
                                             np.array([[0], [0]]), 0)
 
-            if(len(self.tracks[i].trace) > self.max_trace_length):
+            if len(self.tracks[i].trace) > self.max_trace_length:
+                #print 'this ', self.tracks[i].trace
                 for j in range(len(self.tracks[i].trace) -
                                self.max_trace_length):
-                    del self.tracks[i].trace[j]
 
+                    del self.tracks[i].trace[j]
+                #print 'and this ', self.tracks[i].trace
             self.tracks[i].trace.append(self.tracks[i].prediction)
             self.tracks[i].KF.lastResult = self.tracks[i].prediction

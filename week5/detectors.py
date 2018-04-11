@@ -41,10 +41,10 @@ class Detectors(object):
         for prop in props:
             area[prop.label] = prop.area
         #fil_img = (area[labeled, 0] > area_thresh).astype(int)
-        fil_img = (np.logical_and(area[labeled, 0] > area_thresh, area[labeled, 0] < 38400))
+        fil_img = (np.logical_and(area[labeled, 0] > area_thresh, area[labeled, 0] < 12000))
         return fil_img
 
-    def Detect(self, frame):
+    def Detect(self, frame, counter):
         """Detect objects in video frame using following pipeline
             - Convert captured frame from BGR to GRAY
             - Perform Background Subtraction
@@ -70,10 +70,8 @@ class Detectors(object):
         # Perform Background Subtraction
         fgmask = self.fgbg.apply(gray, learningRate=0.01)
 
-
-
         if self.choiceOfDataset == 'highway':
-            structelement = np.ones((3, 3), np.uint8)
+            structelement = np.ones((5, 5), np.uint8)
             fgmask = self.arfilt(fgmask, area_thresh=220)
             out = ndimage.binary_fill_holes(fgmask).astype(np.float32)
             out = cv2.erode(out, structelement, iterations=1)
@@ -126,6 +124,8 @@ class Detectors(object):
         if debug == 1:
             cv2.imshow('Edges', edges)
 
+        cv2.imwrite('/Users/santiagoba88/Desktop/' + self.choiceOfDataset + '/Edges/' + str(counter) + '.png', np.uint8(fgmask))
+
         # Retain only edges within the threshold
         ret, thresh = cv2.threshold(edges, 127, 255, 0)
 
@@ -137,17 +137,19 @@ class Detectors(object):
         if debug == 0:
             cv2.imshow('thresh', thresh)
 
+        cv2.imwrite('/Users/santiagoba88/Desktop/' + self.choiceOfDataset + '/Contours/' + str(counter) + '.png', np.uint8(thresh))
+
         centers = []  # vector of object centroids in a frame
         # we only care about centroids with size of bug in this example
         # recommended to be tunned based on expected object size for
         # improved performance
-        blob_radius_thresh = 10
+        blob_radius_thresh = 30
         # Find centroid for each valid contours
         for cnt in contours:
             try:
                 # Calculate and draw rectangle
                 x, y, w, h = cv2.boundingRect(cnt)
-                if np.logical_and(h>blob_radius_thresh, w>blob_radius_thresh):
+                if np.logical_and(np.logical_and(h > blob_radius_thresh, w > blob_radius_thresh), np.float(h)/w < 2):
                     cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                     b = np.array([[x+w/2], [y+h/2]])
                     centers.append(np.round(b))
