@@ -183,12 +183,7 @@ Every week's submission will be placed in a different folder called 'weekX', whe
 
 
 
+## External Links:
 
-
-
-
-
-
-
-
-
+- <a href="https://drive.google.com/open?id=10gGRAkTmED8FXuEFtYekMw7f72QMubzpMk8xuwhyKJQ">Final presentation (Google Drive) </a>
+- <a href="https://www.overleaf.com/read/xgwgswcmsqqg">Final report (OverLeaf) </a>
