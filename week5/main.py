@@ -26,18 +26,25 @@ def main():
         te_frmStart = 1
         te_frmEnd = 1570
         MOGthreshold = 330
+    elif dataset == 'ownhighway':
+        tr_frmStart = 1050
+        tr_frmEnd = 1350
+        te_frmStart = 1
+        te_frmEnd = 1700
+        MOGthreshold = 10
+
     else:
         print "You haven't defined the right dataset. Options are: highway or traffic."
         exit(0)
 
     # Tracking with Kalman Filters
-    task1_1(MOGthreshold, inputpath, dataset)
+    # task1_1(MOGthreshold, inputpath, dataset)
 
     # Tracking with other method
-    task1_2(dataset, tr_frmStart, te_frmEnd)
+    # task1_2(dataset, tr_frmStart, te_frmEnd)
 
     # Speed Estimator
-    task2()
+    task2(MOGthreshold, inputpath, dataset)
 
     # Software
     task3()
