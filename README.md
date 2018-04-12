@@ -166,16 +166,24 @@ Every week's submission will be placed in a different folder called 'weekX', whe
 
 
 
+## Week 5:
+
+
+### Task 1: Vehicle tracker
+
+- [X] Implement a vehicle tracker with Kalman filter
+
+- [X] Implement a vehicle tracker with other tools (KCF and MEDIANFLOW from OpenCV were tested)
+
+### Task 2: Speed estimator
+
+- [X] Estimate the speed of the vehicles.
 
 
 
 
 
+## External Links:
 
-
-
-
-
-
-
-
+- <a href="https://drive.google.com/open?id=10gGRAkTmED8FXuEFtYekMw7f72QMubzpMk8xuwhyKJQ">Final presentation (Google Drive) </a>
+- <a href="https://www.overleaf.com/read/xgwgswcmsqqg">Final report (OverLeaf) </a>

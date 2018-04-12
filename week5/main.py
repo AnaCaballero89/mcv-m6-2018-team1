@@ -6,7 +6,7 @@ from Task3 import task3
 
 
 def main():
-    dataset = 'highway'  # 'highway', 'traffic'
+    dataset = 'traffic'  # 'highway', 'traffic'
 
     inputpath = '../datasets/' + dataset + '/input/'
     groundTruthPath = '../datasets/' + dataset + '/groundtruth/'
@@ -29,7 +29,7 @@ def main():
         exit(0)
 
     # Tracking with Kalman Filters
-    task1_1()
+    task1_1(MOGthreshold, inputpath, dataset)
 
     # Tracking with other method
     task1_2()
