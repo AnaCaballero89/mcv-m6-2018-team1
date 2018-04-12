@@ -159,7 +159,7 @@ def task1_2(dataset,tr_frmStart,tr_frmEnd):
 
             trackers = [t for t in trackers if t != "DELETE_THIS_TRACKER"]
             centroidList2 = [c for c in centroidList2 if c != "DELETE_THIS_CENTROID"]
-            print "how many trackers: ", len(trackers)
+            # print "how many trackers: ", len(trackers)
 
         cv2.imshow('',rgbMask)
         # cv2.waitKey(0)

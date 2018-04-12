@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../')
 from utils import *
 from Task1_1 import task1_1
 from Task1_2 import task1_2
@@ -6,7 +8,7 @@ from Task3 import task3
 
 
 def main():
-    dataset = 'traffic'  # 'highway', 'traffic'
+    dataset = 'highway'  # 'highway', 'traffic'
 
     inputpath = '../datasets/' + dataset + '/input/'
     groundTruthPath = '../datasets/' + dataset + '/groundtruth/'
@@ -29,10 +31,10 @@ def main():
         exit(0)
 
     # Tracking with Kalman Filters
-    task1_1(MOGthreshold, inputpath, dataset)
+    # task1_1(MOGthreshold, inputpath, dataset)
 
     # Tracking with other method
-    task1_2()
+    task1_2(dataset, tr_frmStart, tr_frmEnd)
 
     # Speed Estimator
     task2()
