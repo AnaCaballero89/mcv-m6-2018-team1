@@ -79,6 +79,15 @@ class Detectors(object):
             out = cv2.dilate(out, structelement, iterations=1)
             out = cv2.erode(out, structelement, iterations=1)
             out = ndimage.binary_fill_holes(out).astype(np.float32) * 255
+        if self.choiceOfDataset == 'ownhighway':
+            structelement = np.ones((3, 3), np.uint8)
+            fgmask = self.arfilt(fgmask, area_thresh=220)
+            out = ndimage.binary_fill_holes(fgmask).astype(np.float32)
+            out = cv2.erode(out, structelement, iterations=1)
+            out = cv2.dilate(out, structelement, iterations=1)
+            out = cv2.dilate(out, structelement, iterations=1)
+            out = cv2.erode(out, structelement, iterations=1)
+            out = ndimage.binary_fill_holes(out).astype(np.float32) * 255
 
         elif self.choiceOfDataset == 'traffic':
             structelement2 = np.array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -137,16 +146,25 @@ class Detectors(object):
         # we only care about centroids with size of bug in this example
         # recommended to be tunned based on expected object size for
         # improved performance
+        xf = []
+        yf = []
+        wf = []
+        hf = []
+
         blob_radius_thresh = 30
         # Find centroid for each valid contours
         for cnt in contours:
             try:
                 # Calculate and draw rectangle
                 x, y, w, h = cv2.boundingRect(cnt)
-                if np.logical_and(np.logical_and(h > blob_radius_thresh, w > blob_radius_thresh), np.float(h)/w < 2):
+                if np.logical_and(np.logical_and(h > blob_radius_thresh, w > blob_radius_thresh), np.float(h) / w < 2):
                     cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-                    b = np.array([[x+w/2], [y+h/2]])
+                    b = np.array([[x + w / 2], [y + h / 2]])
                     centers.append(np.round(b))
+                    xf.append(x)
+                    yf.append(y)
+                    wf.append(wf)
+                    hf.append(hf)
 
             except ZeroDivisionError:
                 pass
@@ -154,4 +172,4 @@ class Detectors(object):
         # show contours of tracking objects
         # cv2.imshow('Track Bugs', frame)
 
-        return centers
+        return centers, xf, yf, wf, hf

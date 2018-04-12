@@ -46,7 +46,7 @@ def task1_1(mogthr, inputpath, dataset):
         #    continue
 
         # Detect and return centeroids of the objects in the frame
-        centers = detector.Detect(frame, counter)
+        centers = detector.Detect(frame, counter)[0]
 
         # If centroids are detected then track them
         if (len(centers) > 0):
