@@ -31,10 +31,10 @@ def main():
         exit(0)
 
     # Tracking with Kalman Filters
-    # task1_1(MOGthreshold, inputpath, dataset)
+    task1_1(MOGthreshold, inputpath, dataset)
 
     # Tracking with other method
-    task1_2(dataset, tr_frmStart, tr_frmEnd)
+    task1_2(dataset, tr_frmStart, te_frmEnd)
 
     # Speed Estimator
     task2()
